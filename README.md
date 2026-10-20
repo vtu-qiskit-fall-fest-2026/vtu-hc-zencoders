@@ -307,6 +307,6 @@ Released under the [MIT License](LICENSE). See `LICENSE` for details.
 **Zencoders** · Team ID `VTU-QFF-HC-0139` · Tier `Online`
 · Built with ⚛️ Qiskit for the VTU-QFF Hackathon
 
-[⬆ Back to Top](#Zencoders)
+[⬆ Back to Top](#zencoders)
 
 </div>
