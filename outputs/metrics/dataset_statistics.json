@@ -1,0 +1,19 @@
+{
+  "total_samples": 52,
+  "num_trajectories": 2,
+  "num_topologies": 10,
+  "class_counts": {
+    "RIGHT": 18,
+    "DOWN_RIGHT": 3,
+    "UP_RIGHT": 28,
+    "STAY": 2,
+    "UP": 1
+  },
+  "class_percentages": {
+    "RIGHT": 34.62,
+    "DOWN_RIGHT": 5.77,
+    "UP_RIGHT": 53.85,
+    "STAY": 3.85,
+    "UP": 1.92
+  }
+}

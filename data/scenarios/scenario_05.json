@@ -1,0 +1,19 @@
+{
+  "id": "scenario_05",
+  "name": "High-Density Perimeter Route",
+  "map_id": "map_03",
+  "scenario_type": "High-density perimeter route",
+  "difficulty": "Hard",
+  "obstacle_type": "mixed (circular and rectangular)",
+  "expected_challenge": "Navigating close to boundary limits while circumventing asymmetrical obstacle clusters",
+  "start": [
+    6.0,
+    44.0
+  ],
+  "target": [
+    44.0,
+    6.0
+  ],
+  "max_steps": 140,
+  "description": "Cross-diagonal route from top-left to bottom-right through asymmetrical obstacle fields"
+}

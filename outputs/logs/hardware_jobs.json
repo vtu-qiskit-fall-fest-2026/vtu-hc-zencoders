@@ -1,0 +1,54 @@
+[
+  {
+    "job_id": "db1s9g9mmimc73fnt320",
+    "backend": "ibm_fez",
+    "sample_id": "state_ne_clear",
+    "shots": 1024,
+    "circuit_hash": "ffe452386b132cd6",
+    "logical_depth": 15,
+    "transpiled_depth": 59,
+    "qubit_count": 4,
+    "result_status": "completed",
+    "execution_duration": 25.3813,
+    "timestamp": "2026-10-05T15:40:06.480810+00:00"
+  },
+  {
+    "job_id": "db1s9mhmmimc73fnt3a0",
+    "backend": "ibm_fez",
+    "sample_id": "state_front_obstacle",
+    "shots": 1024,
+    "circuit_hash": "dbfc7a4dc77c8fc3",
+    "logical_depth": 15,
+    "transpiled_depth": 69,
+    "qubit_count": 4,
+    "result_status": "completed",
+    "execution_duration": 8.1927,
+    "timestamp": "2026-10-05T15:40:14.681929+00:00"
+  },
+  {
+    "job_id": "db1s9oj5ptqc73c58qgg",
+    "backend": "ibm_fez",
+    "sample_id": "state_dynamic_crossing",
+    "shots": 1024,
+    "circuit_hash": "00ab0f3eb136689b",
+    "logical_depth": 15,
+    "transpiled_depth": 60,
+    "qubit_count": 4,
+    "result_status": "completed",
+    "execution_duration": 7.6655,
+    "timestamp": "2026-10-05T15:40:22.358935+00:00"
+  },
+  {
+    "job_id": "db1s9qn2iglc7396gqug",
+    "backend": "ibm_fez",
+    "sample_id": "state_near_target",
+    "shots": 1024,
+    "circuit_hash": "4497d2f578b797da",
+    "logical_depth": 15,
+    "transpiled_depth": 69,
+    "qubit_count": 4,
+    "result_status": "completed",
+    "execution_duration": 8.3819,
+    "timestamp": "2026-10-05T15:40:30.750080+00:00"
+  }
+]

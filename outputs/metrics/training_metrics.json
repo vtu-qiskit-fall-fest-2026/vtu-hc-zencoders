@@ -1,0 +1,50 @@
+{
+  "n_qubits": 6,
+  "n_layers": 3,
+  "head_type": "hybrid",
+  "train_accuracy": 82.15,
+  "validation_accuracy": 71.16,
+  "macro_f1": 0.6144,
+  "weighted_f1": 0.714,
+  "validation_loss": 0.8042,
+  "per_class_precision": {
+    "UP": 0.8958,
+    "UP_RIGHT": 0.6364,
+    "RIGHT": 0.8475,
+    "DOWN_RIGHT": 0.6,
+    "DOWN": 0.875,
+    "DOWN_LEFT": 0.125,
+    "LEFT": 0.5217,
+    "UP_LEFT": 0.7,
+    "STAY": 0.3462
+  },
+  "per_class_recall": {
+    "UP": 0.5181,
+    "UP_RIGHT": 0.8167,
+    "RIGHT": 0.7042,
+    "DOWN_RIGHT": 0.6,
+    "DOWN": 0.9032,
+    "DOWN_LEFT": 0.1111,
+    "LEFT": 0.7742,
+    "UP_LEFT": 0.7179,
+    "STAY": 0.6429
+  },
+  "per_class_f1": {
+    "UP": 0.6565,
+    "UP_RIGHT": 0.7153,
+    "RIGHT": 0.7692,
+    "DOWN_RIGHT": 0.6,
+    "DOWN": 0.8889,
+    "DOWN_LEFT": 0.1176,
+    "LEFT": 0.6234,
+    "UP_LEFT": 0.7089,
+    "STAY": 0.45
+  },
+  "training_duration_seconds": 4.94,
+  "majority_class_baseline": 21.63,
+  "random_baseline": 11.11,
+  "total_training_samples": 1978,
+  "total_validation_samples": 430,
+  "training_trajectories": 68,
+  "validation_trajectories": 16
+}
