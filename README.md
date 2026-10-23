@@ -22,49 +22,30 @@ Every experiment is executed under strictly identical environmental conditions (
 > "The Q-Nav benchmark does not establish quantum advantage over the classical baseline."  
 > Real hardware execution is conducted strictly for **hardware validation, noise characterization, and simulator-vs-hardware fidelity comparison**.
 
----
-
-## 2. Benchmark Summary (Observed Empirical Results)
-
-*Benchmarking across 5 standardized scenarios over multiple seeds yields the following empirical results:*
-
-| Metric | Classical Baseline (APF) | Quantum-Assisted (Hybrid VQC) | Experimental Delta |
-| :--- | :---: | :---: | :---: |
-| **Success Rate** | **89.0%** | **90.0%** | Parity achieved (boosted from 0% to 100.0%) |
-| **Mean Path Length** | **144.30 units** | **144.30 units** | Equal path length under hybrid guidance |
-| **Mean Steps** | **96.2 steps** | **96.2 steps** | Equal step efficiency |
-| **Mean Collisions** | **0.00** | **0.00** | Zero crashes (guaranteed by shared safety layer) |
-| **Collision Rate** | **0.000** | **0.000** | Zero collisions per step |
-| **Navigation Efficiency** | **47.79%** | 42.66% | Classical has slight edge in direct efficiency |
-| **Safety Interventions** | **0.0** | **0.0** | Lookahead safety layer prevents unsafe actuation |
-| **Mean Decision Time** | **0.0009 s** | 0.0045 s | Qiskit Statevector simulation latency |
-| **Mean Episode Time** | **0.8643 s** | 1.1925 s | Classical is ~1.38x faster on CPU |
 
 
----
+## 2. Key Enhancements & Features
 
-## 3. Key Enhancements & Features
-
-### 3.1 Classical APF Navigation
+### 2.1 Classical APF Navigation
 - **Tangential Obstacle Circulation Force ($F_{tan}$):** Circulates around convex obstacles to avoid head-on deadlocks.
 - **Stagnation Detection:** Monitors sliding position window ($W=15$, distance threshold $<3.0$, progress $<1.0$).
 - **Oscillation Detection:** Identifies 2-step alternating action cycles (e.g., `LEFT, RIGHT, LEFT, RIGHT`).
 - **Dual-Direction Bypass Recovery:** Probes left ($+90^\circ$) and right ($-90^\circ$) clearance rays and selects the safer path for a temporary 12-step escape corridor.
 
-### 3.2 Quantum VQC Navigation (Qiskit 2.x) & Hybrid Fusion
+### 2.2 Quantum VQC Navigation (Qiskit 2.x) & Hybrid Fusion
 - **Hybrid Decision Architecture (70% Quantum + 30% Classical Safety):** Selects actions among lookahead-safe directions, weighting quantum preference by 70% and classical APF goal guidance by 30% to prevent chokepoint oscillations.
 - **Domain 4D Feature Selection:** Reduces raw 12D spatial features to the 4 most critical navigation inputs: `target_dir_x` (index 1), `target_dir_y` (index 2), `norm_nearest_obs_dist` (index 5), and `obstacle_density` (index 9), min-max normalized to $[0, 1]$ for angle encoding.
 - **Hardware-Efficient Ansatz:** $R_y(\theta)$ and $R_z(\theta/2)$ angle encoding, $L \in [1, 3]$ variational layers, and circular/ring CNOT entanglement.
 - **Expectation Readout:** Measures single-qubit Pauli-Z expectations $\langle Z_i \rangle \in [-1, 1]$ and basis state probabilities.
 - **Fine-Tuning on Benchmark Scenarios:** Direct imitation learning with Adam optimizer on classical APF demonstrations across benchmark maps to eliminate exploratory wandering.
 
-### 3.3 Shared Safety Arbitration
+### 2.3 Shared Safety Arbitration
 - **Lookahead Safe Actions (`get_safe_actions`):** Proactively filters candidate moves against static obstacles and airspace boundaries.
 - **Swept-Sphere Intersection:** Continuous capsule collision checking between $p(t)$ and $p(t+1)$ prevents tunneling.
 - **Boundary Margin Enforcement:** Ensures the UAV remains within authorized flight airspace.
 - **Disambiguated Telemetry:** Distinguishes `collision_count` (actual geometric collision), `unsafe_action_attempts` (proposed raw action violating safety), and `safety_interventions` (safety override applied).
 
-### 3.4 Quantum Decision Explainability / XAI
+### 2.4 Quantum Decision Explainability / XAI
 - **Central Finite Differences:** Computes numerical sensitivity $\partial P(a) / \partial x_i \approx (P(x_i + \epsilon) - P(x_i - \epsilon)) / (2\epsilon)$ with step size $\epsilon = 10^{-4}$.
 - **Saliency & Gradient Methods:** Supports direct action probability perturbation (`saliency`) and log-probability gradient sensitivity (`gradient`).
 - **Domain Feature Mapping:** Accurately maps 4D circuit inputs back to canonical 12D spatial names: `target_direction_x`, `target_direction_y`, `nearest_obstacle_distance`, and `obstacle_density`.
@@ -73,7 +54,7 @@ Every experiment is executed under strictly identical environmental conditions (
 - **Performance Control:** Explanations are opt-in via `--explain-decisions`, with explanation computation time tracked separately from navigation decision latency.
 - **Scientific Caveat:** Explanations estimate local numerical sensitivity of model outputs; they do not prove causal influence.
 
-### 3.5 Dynamic / Moving Obstacle Navigation
+### 2.5 Dynamic / Moving Obstacle Navigation
 - **Premise:** *"Dynamic obstacle experiments evaluate navigation under time-varying obstacle configurations."*
 - **Motion Patterns:** Linear motion with scalar boundary reflection, circular orbital motion (decoupled physical and orbit radius), and deterministic stochastic random walk (`np.random.default_rng(seed)`).
 - **Continuous Swept-Circle Collision Checking:** Closed-form continuous swept collision testing over relative displacement trajectory $\mathbf{r}(\tau) = \mathbf{r}_0 + \tau \mathbf{v}_{rel}$ minimizes $\tau^* \in [0, 1]$ to detect crossing paths without discrete tunneling.
@@ -82,7 +63,7 @@ Every experiment is executed under strictly identical environmental conditions (
 - **3-Model Dynamic Benchmarks:** Fairly evaluates Classical APF, Pure Quantum, and Hybrid Quantum-Assisted under strictly identical seeds and obstacle trajectories.
 - **Dynamic Telemetry Logging:** Records real-time kinematics, relative velocities, predicted clearances, and safety interventions in `outputs/logs/dynamic_telemetry.csv`.
 
-### 3.6 Real IBM Quantum Hardware Execution & Validation
+### 2.6 Real IBM Quantum Hardware Execution & Validation
 - **Goal:** Real physical hardware execution of the identical Q-Nav VQC for hardware validation, noise characterization, and fidelity comparison against ideal simulation.
 - **Modern IBM Runtime API:** Built against **Qiskit 2.5.2** and **Qiskit IBM Runtime 0.47.0** using `SamplerV2(mode=backend)` and PUBs (Primitive Unified Blocs). Obsolete `Sampler(backend=backend)` is strictly rejected.
 - **Explicit Basis State Splitting:** 4 qubits produce $2^4 = 16$ computational states. Basis states $0 \dots 8$ ($|0000\rangle \dots |1000\rangle$) map to the 9 discrete actions; states $9 \dots 15$ ($|1001\rangle \dots |1111\rangle$) are invalid unmapped states. Physical noise leaks into these states, which is tracked explicitly as `invalid_probability_mass`.
@@ -93,7 +74,7 @@ Every experiment is executed under strictly identical environmental conditions (
 
 ---
 
-## 4. Architecture
+## 3. Architecture
 
 ```
 run.py / CLI (--hybrid flag)
@@ -118,7 +99,7 @@ run.py / CLI (--hybrid flag)
 
 ---
 
-## 5. Project Structure
+## 4. Project Structure
 
 ```
 Q-Nav/
@@ -188,7 +169,7 @@ Q-Nav/
 
 ---
 
-## 6. Installation
+## 5. Installation
 
 ```bash
 # Clone the repository
@@ -204,7 +185,7 @@ venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 ```
 
-### 6.1 IBM Quantum Account & Token Setup
+### 5.1 IBM Quantum Account & Token Setup
 To execute or validate on physical IBM Quantum QPUs:
 1. Create an account at [quantum.ibm.com](https://quantum.ibm.com).
 2. Retrieve your API token from the IBM Quantum dashboard.
@@ -230,7 +211,7 @@ To execute or validate on physical IBM Quantum QPUs:
 
 ---
 
-## 7. CLI Usage & Experiments
+## 6. CLI Usage & Experiments
 
 ```bash
 # --- Standard Classical & Simulator Benchmarks ---
@@ -274,7 +255,7 @@ python run.py --hardware-validation --real-hardware --hardware-fallback-simulato
 
 ---
 
-## 8. Running Tests
+## 7. Running Tests
 
 Execute the complete automated test suite using `pytest`:
 
@@ -318,7 +299,7 @@ Test coverage includes:
 
 ---
 
-## 9. Streamlit Mission Dashboard
+## 8. Streamlit Mission Dashboard
 
 Launch the interactive dashboard:
 
@@ -345,7 +326,7 @@ The web dashboard provides:
 
 ---
 
-## 10. Output Deliverables
+## 9. Output Deliverables
 
 All outputs are saved to the `outputs/` directory:
 
@@ -385,6 +366,6 @@ outputs/
 
 ---
 
-## 11. License
+## 10. License
 
 This project is licensed under the **MIT License**.
