@@ -1,3 +1,18 @@
+## 👥 Team Details
+
+* **Team Name:** Zencoders
+* **Team ID:** VTU-QFF-HC-0139
+* **Project Name:** Q-Nav — Quantum-Assisted UAV Navigation
+* **Hackathon:** VTU-Qiskit Fall Fest 2026
+
+### Team Members
+
+| S. No. | Name            | Role        |
+| ------ | --------------- | ----------- |
+| 1      | Sai Lahari      | Team Lead   |
+| 2      | Shaik Karimulla | Team Member |
+| 3      | Sunku Kamalesh  | Team Member |
+
 # Q-Nav — Quantum-Assisted UAV Navigation
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/downloads/)
