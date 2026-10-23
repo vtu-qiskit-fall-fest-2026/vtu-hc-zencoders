@@ -1,0 +1,53 @@
+{
+  "map_id": "map_01",
+  "name": "Sparse Airspace",
+  "description": "Open airspace with scattered circular obstacles testing basic obstacle avoidance",
+  "dimensions": {
+    "width": 50.0,
+    "height": 50.0
+  },
+  "obstacles": [
+    {
+      "id": 1,
+      "type": "circle",
+      "x": 18.0,
+      "y": 18.0,
+      "radius": 4.0
+    },
+    {
+      "id": 2,
+      "type": "circle",
+      "x": 30.0,
+      "y": 30.0,
+      "radius": 4.5
+    },
+    {
+      "id": 3,
+      "type": "circle",
+      "x": 15.0,
+      "y": 35.0,
+      "radius": 3.5
+    },
+    {
+      "id": 4,
+      "type": "circle",
+      "x": 35.0,
+      "y": 15.0,
+      "radius": 3.5
+    },
+    {
+      "id": 5,
+      "type": "circle",
+      "x": 25.0,
+      "y": 25.0,
+      "radius": 3.0
+    },
+    {
+      "id": 6,
+      "type": "circle",
+      "x": 40.0,
+      "y": 38.0,
+      "radius": 3.0
+    }
+  ]
+}

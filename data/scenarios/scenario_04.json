@@ -1,0 +1,19 @@
+{
+  "id": "scenario_04",
+  "name": "Vertical Chokepoint Transit",
+  "map_id": "map_02",
+  "scenario_type": "Vertical chokepoint",
+  "difficulty": "Medium",
+  "obstacle_type": "rectangular",
+  "expected_challenge": "Precision transit through a narrow vertical slot flanked by dual symmetrical blocks",
+  "start": [
+    24.0,
+    5.0
+  ],
+  "target": [
+    24.0,
+    45.0
+  ],
+  "max_steps": 110,
+  "description": "Vertical transit through the center channel flanked by obstacles"
+}

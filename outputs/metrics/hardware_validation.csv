@@ -1,0 +1,5 @@
+timestamp,scenario_id,seed,sample_id,backend,shots,job_id,simulator_action,hardware_action,action_agreement,simulator_confidence,hardware_confidence,invalid_probability_mass,mean_absolute_probability_difference,max_probability_difference,js_divergence,logical_depth,transpiled_depth,num_qubits,status
+2026-10-05T15:40:06.480810+00:00,scenario_01,42,state_ne_clear,ibm_fez,1024,db1s9g9mmimc73fnt320,3,6,False,0.2245,0.4213,0.3672,0.1326,0.3038,0.3305,15,59,4,completed
+2026-10-05T15:40:14.681929+00:00,scenario_02,143,state_front_obstacle,ibm_fez,1024,db1s9mhmmimc73fnt3a0,2,5,False,0.3039,0.2526,0.4355,0.0756,0.1939,0.1579,15,69,4,completed
+2026-10-05T15:40:22.358935+00:00,scenario_dynamic_01,244,state_dynamic_crossing,ibm_fez,1024,db1s9oj5ptqc73c58qgg,3,1,False,0.5931,0.2518,0.585,0.1058,0.3672,0.2235,15,60,4,completed
+2026-10-05T15:40:30.750080+00:00,scenario_05,42,state_near_target,ibm_fez,1024,db1s9qn2iglc7396gqug,3,4,False,0.6281,0.256,0.3936,0.1602,0.6088,0.4922,15,69,4,completed
