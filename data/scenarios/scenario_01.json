@@ -1,0 +1,19 @@
+{
+  "id": "scenario_01",
+  "name": "Sparse Airspace Diagonal Traversal",
+  "map_id": "map_01",
+  "scenario_type": "Sparse open airspace",
+  "difficulty": "Easy",
+  "obstacle_type": "circular",
+  "expected_challenge": "Smooth boundary clearance, direct target heading, and gentle obstacle bypass without path inflation",
+  "start": [
+    5.0,
+    5.0
+  ],
+  "target": [
+    45.0,
+    45.0
+  ],
+  "max_steps": 100,
+  "description": "Baseline navigation across sparse circular obstacles from bottom-left to top-right"
+}

@@ -1,0 +1,69 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario_01",
+      "name": "Sparse Airspace Diagonal Traversal",
+      "map_id": "map_01",
+      "scenario_type": "Sparse open airspace",
+      "difficulty": "Easy",
+      "obstacle_type": "circular",
+      "expected_challenge": "Smooth boundary clearance, direct target heading, and gentle obstacle bypass without path inflation",
+      "start": [5.0, 5.0],
+      "target": [45.0, 45.0],
+      "max_steps": 100,
+      "description": "Baseline navigation across sparse circular obstacles from bottom-left to top-right"
+    },
+    {
+      "id": "scenario_02",
+      "name": "Corridor Crossing",
+      "map_id": "map_02",
+      "scenario_type": "Narrow corridor",
+      "difficulty": "Medium",
+      "obstacle_type": "rectangular",
+      "expected_challenge": "Longitudinal corridor entry and traversal between rectangular barriers without lateral wall oscillations",
+      "start": [5.0, 25.0],
+      "target": [45.0, 25.0],
+      "max_steps": 120,
+      "description": "Horizontal traversal navigating through the central corridor between rectangular barriers"
+    },
+    {
+      "id": "scenario_03",
+      "name": "Urban Cluster Avoidance",
+      "map_id": "map_03",
+      "scenario_type": "Urban obstacle cluster",
+      "difficulty": "Hard",
+      "obstacle_type": "mixed (circular and rectangular)",
+      "expected_challenge": "Local-minimum trap escape and circulation around concave obstacle groupings using tangential steering",
+      "start": [5.0, 5.0],
+      "target": [45.0, 45.0],
+      "max_steps": 140,
+      "description": "Diagonal route through dense obstacle clusters requiring avoidance of local-minima traps"
+    },
+    {
+      "id": "scenario_04",
+      "name": "Vertical Chokepoint Transit",
+      "map_id": "map_02",
+      "scenario_type": "Vertical chokepoint",
+      "difficulty": "Medium",
+      "obstacle_type": "rectangular",
+      "expected_challenge": "Precision transit through a narrow vertical slot flanked by dual symmetrical blocks",
+      "start": [24.0, 5.0],
+      "target": [24.0, 45.0],
+      "max_steps": 110,
+      "description": "Vertical transit through the center channel flanked by obstacles"
+    },
+    {
+      "id": "scenario_05",
+      "name": "High-Density Perimeter Route",
+      "map_id": "map_03",
+      "scenario_type": "High-density perimeter route",
+      "difficulty": "Hard",
+      "obstacle_type": "mixed (circular and rectangular)",
+      "expected_challenge": "Navigating close to boundary limits while circumventing asymmetrical obstacle clusters",
+      "start": [6.0, 44.0],
+      "target": [44.0, 6.0],
+      "max_steps": 140,
+      "description": "Cross-diagonal route from top-left to bottom-right through asymmetrical obstacle fields"
+    }
+  ]
+}

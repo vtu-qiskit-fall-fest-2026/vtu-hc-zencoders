@@ -1,0 +1,76 @@
+{
+  "map_id": "map_03",
+  "name": "Urban Cluster Maze",
+  "description": "Dense obstacle clusters forming concave traps, challenging both classical APF and quantum navigators",
+  "dimensions": {
+    "width": 50.0,
+    "height": 50.0
+  },
+  "obstacles": [
+    {
+      "id": 1,
+      "type": "circle",
+      "x": 20.0,
+      "y": 20.0,
+      "radius": 4.0
+    },
+    {
+      "id": 2,
+      "type": "circle",
+      "x": 20.0,
+      "y": 28.0,
+      "radius": 4.0
+    },
+    {
+      "id": 3,
+      "type": "circle",
+      "x": 26.0,
+      "y": 24.0,
+      "radius": 3.5
+    },
+    {
+      "id": 4,
+      "type": "rectangle",
+      "x_min": 10.0,
+      "y_min": 35.0,
+      "x_max": 22.0,
+      "y_max": 39.0
+    },
+    {
+      "id": 5,
+      "type": "rectangle",
+      "x_min": 32.0,
+      "y_min": 10.0,
+      "x_max": 44.0,
+      "y_max": 14.0
+    },
+    {
+      "id": 6,
+      "type": "circle",
+      "x": 35.0,
+      "y": 30.0,
+      "radius": 3.8
+    },
+    {
+      "id": 7,
+      "type": "circle",
+      "x": 35.0,
+      "y": 38.0,
+      "radius": 3.5
+    },
+    {
+      "id": 8,
+      "type": "circle",
+      "x": 12.0,
+      "y": 14.0,
+      "radius": 3.0
+    },
+    {
+      "id": 9,
+      "type": "circle",
+      "x": 42.0,
+      "y": 24.0,
+      "radius": 3.2
+    }
+  ]
+}

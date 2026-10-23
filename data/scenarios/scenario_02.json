@@ -1,0 +1,19 @@
+{
+  "id": "scenario_02",
+  "name": "Corridor Crossing",
+  "map_id": "map_02",
+  "scenario_type": "Narrow corridor",
+  "difficulty": "Medium",
+  "obstacle_type": "rectangular",
+  "expected_challenge": "Longitudinal corridor entry and traversal between rectangular barriers without lateral wall oscillations",
+  "start": [
+    5.0,
+    25.0
+  ],
+  "target": [
+    45.0,
+    25.0
+  ],
+  "max_steps": 120,
+  "description": "Horizontal traversal navigating through the central corridor between rectangular barriers"
+}

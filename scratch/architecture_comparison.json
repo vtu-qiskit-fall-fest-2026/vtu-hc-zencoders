@@ -1,0 +1,62 @@
+[
+  {
+    "model_name": "Model A",
+    "n_qubits": 4,
+    "n_layers": 2,
+    "n_vqc_weights": 16,
+    "total_params": 205,
+    "inference_time_ms": 3.25,
+    "training_time_s": 54.4,
+    "val_accuracy": 41.87,
+    "val_loss": 1.7709,
+    "macro_f1": 0.3042
+  },
+  {
+    "model_name": "Model B",
+    "n_qubits": 4,
+    "n_layers": 3,
+    "n_vqc_weights": 24,
+    "total_params": 213,
+    "inference_time_ms": 4.72,
+    "training_time_s": 75.3,
+    "val_accuracy": 35.89,
+    "val_loss": 1.8061,
+    "macro_f1": 0.2423
+  },
+  {
+    "model_name": "Model C",
+    "n_qubits": 4,
+    "n_layers": 4,
+    "n_vqc_weights": 32,
+    "total_params": 221,
+    "inference_time_ms": 4.17,
+    "training_time_s": 94.8,
+    "val_accuracy": 37.01,
+    "val_loss": 1.8587,
+    "macro_f1": 0.2232
+  },
+  {
+    "model_name": "Model D",
+    "n_qubits": 6,
+    "n_layers": 3,
+    "n_vqc_weights": 36,
+    "total_params": 675,
+    "inference_time_ms": 2.63,
+    "training_time_s": 151.0,
+    "val_accuracy": 35.14,
+    "val_loss": 1.8335,
+    "macro_f1": 0.2306
+  },
+  {
+    "model_name": "Model E",
+    "n_qubits": 6,
+    "n_layers": 4,
+    "n_vqc_weights": 48,
+    "total_params": 687,
+    "inference_time_ms": 4.26,
+    "training_time_s": 284.1,
+    "val_accuracy": 42.99,
+    "val_loss": 1.6937,
+    "macro_f1": 0.2679
+  }
+]

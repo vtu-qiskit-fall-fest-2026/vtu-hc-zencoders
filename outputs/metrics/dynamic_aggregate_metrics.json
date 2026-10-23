@@ -1,0 +1,704 @@
+{
+  "classical": {
+    "total_episodes": 1,
+    "success_count": 0,
+    "success_rate": 0.0,
+    "mean_path_length": 45.0,
+    "mean_steps": 30.0,
+    "mean_collisions": 0.0,
+    "mean_collision_count": 0.0,
+    "mean_collision_rate": 0.0,
+    "mean_navigation_efficiency": 0.4054,
+    "mean_efficiency": 0.4054,
+    "mean_final_distance": 9.362,
+    "mean_safety_violations": 0.0,
+    "mean_safety_interventions": 0.0,
+    "mean_unsafe_action_attempts": 0.0,
+    "mean_boundary_violations": 0.0,
+    "mean_min_obstacle_clearance": 1.916,
+    "mean_min_boundary_clearance": 4.2,
+    "mean_predicted_collision_count": 0.0,
+    "mean_min_moving_obstacle_clearance": 3.675,
+    "mean_moving_obstacle_clearance": 11.504,
+    "mean_progress_ratio": 0.8109,
+    "mean_heading_smoothness": 6.283,
+    "mean_action_switch_count": 7.0,
+    "mean_oscillation_count": 2.0,
+    "mean_decision_time": 0.0003,
+    "mean_quantum_circuit_execution_time": 0.0,
+    "mean_reward": 77.27,
+    "mean_duration_seconds": 0.1888,
+    "mean_episode_time": 0.1888,
+    "mean_energy_proxy": 46.885,
+    "distributions": {
+      "success_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "path_length": {
+        "mean": 45.0,
+        "std": 0.0,
+        "median": 45.0,
+        "min": 45.0,
+        "max": 45.0,
+        "ci_95": 0.0
+      },
+      "steps": {
+        "mean": 30.0,
+        "std": 0.0,
+        "median": 30.0,
+        "min": 30.0,
+        "max": 30.0,
+        "ci_95": 0.0
+      },
+      "final_distance": {
+        "mean": 9.362,
+        "std": 0.0,
+        "median": 9.362,
+        "min": 9.362,
+        "max": 9.362,
+        "ci_95": 0.0
+      },
+      "collision_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "collision_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "safety_interventions": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "unsafe_action_attempts": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "boundary_violations": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "min_obstacle_clearance": {
+        "mean": 1.916,
+        "std": 0.0,
+        "median": 1.916,
+        "min": 1.916,
+        "max": 1.916,
+        "ci_95": 0.0
+      },
+      "min_boundary_clearance": {
+        "mean": 4.2,
+        "std": 0.0,
+        "median": 4.2,
+        "min": 4.2,
+        "max": 4.2,
+        "ci_95": 0.0
+      },
+      "predicted_collision_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "min_moving_obstacle_clearance": {
+        "mean": 3.675,
+        "std": 0.0,
+        "median": 3.675,
+        "min": 3.675,
+        "max": 3.675,
+        "ci_95": 0.0
+      },
+      "mean_moving_obstacle_clearance": {
+        "mean": 11.504,
+        "std": 0.0,
+        "median": 11.504,
+        "min": 11.504,
+        "max": 11.504,
+        "ci_95": 0.0
+      },
+      "navigation_efficiency": {
+        "mean": 0.4054,
+        "std": 0.0,
+        "median": 0.4054,
+        "min": 0.4054,
+        "max": 0.4054,
+        "ci_95": 0.0
+      },
+      "progress_ratio": {
+        "mean": 0.8109,
+        "std": 0.0,
+        "median": 0.8109,
+        "min": 0.8109,
+        "max": 0.8109,
+        "ci_95": 0.0
+      },
+      "heading_smoothness": {
+        "mean": 6.283,
+        "std": 0.0,
+        "median": 6.283,
+        "min": 6.283,
+        "max": 6.283,
+        "ci_95": 0.0
+      },
+      "action_switch_count": {
+        "mean": 7.0,
+        "std": 0.0,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 7.0,
+        "ci_95": 0.0
+      },
+      "oscillation_count": {
+        "mean": 2.0,
+        "std": 0.0,
+        "median": 2.0,
+        "min": 2.0,
+        "max": 2.0,
+        "ci_95": 0.0
+      },
+      "mean_decision_time": {
+        "mean": 0.0003,
+        "std": 0.0,
+        "median": 0.0003,
+        "min": 0.0003,
+        "max": 0.0003,
+        "ci_95": 0.0
+      },
+      "quantum_circuit_execution_time": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "total_episode_time": {
+        "mean": 0.1888,
+        "std": 0.0,
+        "median": 0.1888,
+        "min": 0.1888,
+        "max": 0.1888,
+        "ci_95": 0.0
+      },
+      "total_reward": {
+        "mean": 77.27,
+        "std": 0.0,
+        "median": 77.27,
+        "min": 77.27,
+        "max": 77.27,
+        "ci_95": 0.0
+      },
+      "energy_proxy": {
+        "mean": 46.885,
+        "std": 0.0,
+        "median": 46.885,
+        "min": 46.885,
+        "max": 46.885,
+        "ci_95": 0.0
+      }
+    }
+  },
+  "quantum": {
+    "total_episodes": 1,
+    "success_count": 0,
+    "success_rate": 0.0,
+    "mean_path_length": 45.0,
+    "mean_steps": 30.0,
+    "mean_collisions": 0.0,
+    "mean_collision_count": 0.0,
+    "mean_collision_rate": 0.0,
+    "mean_navigation_efficiency": 0.3431,
+    "mean_efficiency": 0.3431,
+    "mean_final_distance": 15.536,
+    "mean_safety_violations": 0.0,
+    "mean_safety_interventions": 0.0,
+    "mean_unsafe_action_attempts": 0.0,
+    "mean_boundary_violations": 0.0,
+    "mean_min_obstacle_clearance": 1.339,
+    "mean_min_boundary_clearance": 4.2,
+    "mean_predicted_collision_count": 0.0,
+    "mean_min_moving_obstacle_clearance": 1.989,
+    "mean_moving_obstacle_clearance": 12.502,
+    "mean_progress_ratio": 0.6861,
+    "mean_heading_smoothness": 6.283,
+    "mean_action_switch_count": 7.0,
+    "mean_oscillation_count": 1.0,
+    "mean_decision_time": 0.0039,
+    "mean_quantum_circuit_execution_time": 0.1104,
+    "mean_reward": 64.92,
+    "mean_duration_seconds": 0.3966,
+    "mean_episode_time": 0.3966,
+    "mean_energy_proxy": 46.885,
+    "distributions": {
+      "success_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "path_length": {
+        "mean": 45.0,
+        "std": 0.0,
+        "median": 45.0,
+        "min": 45.0,
+        "max": 45.0,
+        "ci_95": 0.0
+      },
+      "steps": {
+        "mean": 30.0,
+        "std": 0.0,
+        "median": 30.0,
+        "min": 30.0,
+        "max": 30.0,
+        "ci_95": 0.0
+      },
+      "final_distance": {
+        "mean": 15.536,
+        "std": 0.0,
+        "median": 15.536,
+        "min": 15.536,
+        "max": 15.536,
+        "ci_95": 0.0
+      },
+      "collision_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "collision_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "safety_interventions": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "unsafe_action_attempts": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "boundary_violations": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "min_obstacle_clearance": {
+        "mean": 1.339,
+        "std": 0.0,
+        "median": 1.339,
+        "min": 1.339,
+        "max": 1.339,
+        "ci_95": 0.0
+      },
+      "min_boundary_clearance": {
+        "mean": 4.2,
+        "std": 0.0,
+        "median": 4.2,
+        "min": 4.2,
+        "max": 4.2,
+        "ci_95": 0.0
+      },
+      "predicted_collision_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "min_moving_obstacle_clearance": {
+        "mean": 1.989,
+        "std": 0.0,
+        "median": 1.989,
+        "min": 1.989,
+        "max": 1.989,
+        "ci_95": 0.0
+      },
+      "mean_moving_obstacle_clearance": {
+        "mean": 12.502,
+        "std": 0.0,
+        "median": 12.502,
+        "min": 12.502,
+        "max": 12.502,
+        "ci_95": 0.0
+      },
+      "navigation_efficiency": {
+        "mean": 0.3431,
+        "std": 0.0,
+        "median": 0.3431,
+        "min": 0.3431,
+        "max": 0.3431,
+        "ci_95": 0.0
+      },
+      "progress_ratio": {
+        "mean": 0.6861,
+        "std": 0.0,
+        "median": 0.6861,
+        "min": 0.6861,
+        "max": 0.6861,
+        "ci_95": 0.0
+      },
+      "heading_smoothness": {
+        "mean": 6.283,
+        "std": 0.0,
+        "median": 6.283,
+        "min": 6.283,
+        "max": 6.283,
+        "ci_95": 0.0
+      },
+      "action_switch_count": {
+        "mean": 7.0,
+        "std": 0.0,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 7.0,
+        "ci_95": 0.0
+      },
+      "oscillation_count": {
+        "mean": 1.0,
+        "std": 0.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "ci_95": 0.0
+      },
+      "mean_decision_time": {
+        "mean": 0.0039,
+        "std": 0.0,
+        "median": 0.0039,
+        "min": 0.0039,
+        "max": 0.0039,
+        "ci_95": 0.0
+      },
+      "quantum_circuit_execution_time": {
+        "mean": 0.1104,
+        "std": 0.0,
+        "median": 0.1104,
+        "min": 0.1104,
+        "max": 0.1104,
+        "ci_95": 0.0
+      },
+      "total_episode_time": {
+        "mean": 0.3966,
+        "std": 0.0,
+        "median": 0.3966,
+        "min": 0.3966,
+        "max": 0.3966,
+        "ci_95": 0.0
+      },
+      "total_reward": {
+        "mean": 64.92,
+        "std": 0.0,
+        "median": 64.92,
+        "min": 64.92,
+        "max": 64.92,
+        "ci_95": 0.0
+      },
+      "energy_proxy": {
+        "mean": 46.885,
+        "std": 0.0,
+        "median": 46.885,
+        "min": 46.885,
+        "max": 46.885,
+        "ci_95": 0.0
+      }
+    }
+  },
+  "action_divergence_analysis": {
+    "total_decision_steps": 60,
+    "divergent_steps": 19,
+    "divergence_rate": 0.3167,
+    "quantum_matches_classical": 23,
+    "quantum_classical_match_rate": 0.3833,
+    "hybrid_matches_classical": 42,
+    "hybrid_classical_match_rate": 0.7,
+    "pure_quantum_safety_overrides": 0,
+    "hybrid_safety_overrides": 0,
+    "mean_trajectory_step_difference": 0.0,
+    "mean_path_length_difference": 0.0,
+    "hybrid_weight": 0.7
+  },
+  "metadata": {
+    "seeds": [
+      42
+    ],
+    "scenarios": [
+      "test_dyn_scn"
+    ],
+    "total_episodes_per_model": 1,
+    "is_dynamic": true
+  },
+  "hybrid": {
+    "total_episodes": 1,
+    "success_count": 0,
+    "success_rate": 0.0,
+    "mean_path_length": 45.0,
+    "mean_steps": 30.0,
+    "mean_collisions": 0.0,
+    "mean_collision_count": 0.0,
+    "mean_collision_rate": 0.0,
+    "mean_navigation_efficiency": 0.3903,
+    "mean_efficiency": 0.3903,
+    "mean_final_distance": 10.857,
+    "mean_safety_violations": 0.0,
+    "mean_safety_interventions": 0.0,
+    "mean_unsafe_action_attempts": 0.0,
+    "mean_boundary_violations": 0.0,
+    "mean_min_obstacle_clearance": 1.901,
+    "mean_min_boundary_clearance": 4.2,
+    "mean_predicted_collision_count": 0.0,
+    "mean_min_moving_obstacle_clearance": 3.305,
+    "mean_moving_obstacle_clearance": 13.227,
+    "mean_progress_ratio": 0.7806,
+    "mean_heading_smoothness": 3.927,
+    "mean_action_switch_count": 5.0,
+    "mean_oscillation_count": 0.0,
+    "mean_decision_time": 0.0029,
+    "mean_quantum_circuit_execution_time": 0.0814,
+    "mean_reward": 74.28,
+    "mean_duration_seconds": 0.3252,
+    "mean_episode_time": 0.3252,
+    "mean_energy_proxy": 46.178,
+    "distributions": {
+      "success_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "path_length": {
+        "mean": 45.0,
+        "std": 0.0,
+        "median": 45.0,
+        "min": 45.0,
+        "max": 45.0,
+        "ci_95": 0.0
+      },
+      "steps": {
+        "mean": 30.0,
+        "std": 0.0,
+        "median": 30.0,
+        "min": 30.0,
+        "max": 30.0,
+        "ci_95": 0.0
+      },
+      "final_distance": {
+        "mean": 10.857,
+        "std": 0.0,
+        "median": 10.857,
+        "min": 10.857,
+        "max": 10.857,
+        "ci_95": 0.0
+      },
+      "collision_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "collision_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "safety_interventions": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "unsafe_action_attempts": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "boundary_violations": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "min_obstacle_clearance": {
+        "mean": 1.901,
+        "std": 0.0,
+        "median": 1.901,
+        "min": 1.901,
+        "max": 1.901,
+        "ci_95": 0.0
+      },
+      "min_boundary_clearance": {
+        "mean": 4.2,
+        "std": 0.0,
+        "median": 4.2,
+        "min": 4.2,
+        "max": 4.2,
+        "ci_95": 0.0
+      },
+      "predicted_collision_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "min_moving_obstacle_clearance": {
+        "mean": 3.305,
+        "std": 0.0,
+        "median": 3.305,
+        "min": 3.305,
+        "max": 3.305,
+        "ci_95": 0.0
+      },
+      "mean_moving_obstacle_clearance": {
+        "mean": 13.227,
+        "std": 0.0,
+        "median": 13.227,
+        "min": 13.227,
+        "max": 13.227,
+        "ci_95": 0.0
+      },
+      "navigation_efficiency": {
+        "mean": 0.3903,
+        "std": 0.0,
+        "median": 0.3903,
+        "min": 0.3903,
+        "max": 0.3903,
+        "ci_95": 0.0
+      },
+      "progress_ratio": {
+        "mean": 0.7806,
+        "std": 0.0,
+        "median": 0.7806,
+        "min": 0.7806,
+        "max": 0.7806,
+        "ci_95": 0.0
+      },
+      "heading_smoothness": {
+        "mean": 3.927,
+        "std": 0.0,
+        "median": 3.927,
+        "min": 3.927,
+        "max": 3.927,
+        "ci_95": 0.0
+      },
+      "action_switch_count": {
+        "mean": 5.0,
+        "std": 0.0,
+        "median": 5.0,
+        "min": 5.0,
+        "max": 5.0,
+        "ci_95": 0.0
+      },
+      "oscillation_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "mean_decision_time": {
+        "mean": 0.0029,
+        "std": 0.0,
+        "median": 0.0029,
+        "min": 0.0029,
+        "max": 0.0029,
+        "ci_95": 0.0
+      },
+      "quantum_circuit_execution_time": {
+        "mean": 0.0814,
+        "std": 0.0,
+        "median": 0.0814,
+        "min": 0.0814,
+        "max": 0.0814,
+        "ci_95": 0.0
+      },
+      "total_episode_time": {
+        "mean": 0.3252,
+        "std": 0.0,
+        "median": 0.3252,
+        "min": 0.3252,
+        "max": 0.3252,
+        "ci_95": 0.0
+      },
+      "total_reward": {
+        "mean": 74.28,
+        "std": 0.0,
+        "median": 74.28,
+        "min": 74.28,
+        "max": 74.28,
+        "ci_95": 0.0
+      },
+      "energy_proxy": {
+        "mean": 46.178,
+        "std": 0.0,
+        "median": 46.178,
+        "min": 46.178,
+        "max": 46.178,
+        "ci_95": 0.0
+      }
+    }
+  }
+}

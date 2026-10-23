@@ -1,0 +1,214 @@
+{
+  "step_1_baseline": {
+    "validation_accuracy": 26.2,
+    "macro_f1": 0.0964,
+    "majority_class_baseline": 34.93,
+    "random_baseline": 11.11,
+    "total_samples": 1246,
+    "sample_generation": "isolated snapshots without multi-sector trajectory balancing"
+  },
+  "phase_4_teacher_lookahead_experiments": {
+    "evaluated_lookahead_steps": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "best_lookahead": 2,
+    "k2_success_rate": 86.7,
+    "k2_collision_rate": 0.0,
+    "k2_reversal_rate": 7.13,
+    "selection_rationale": "Empirical validation: highest path completion rate with zero collisions and minimal 180-degree oscillations"
+  },
+  "phase_6_encoding_strategy_experiments": {
+    "evaluated_strategies": {
+      "Strategy A (Grouped)": {
+        "4_qubit_val_acc": 41.18,
+        "6_qubit_val_acc": 58.19
+      },
+      "Strategy B (Angle-Scaled)": {
+        "4_qubit_val_acc": 39.9,
+        "6_qubit_val_acc": 44.04
+      },
+      "Strategy C (Bounded Nonlinear tanh)": {
+        "4_qubit_val_acc": 45.15,
+        "6_qubit_val_acc": 59.46
+      },
+      "Strategy D (Grouped Normalized)": {
+        "4_qubit_val_acc": 41.81,
+        "6_qubit_val_acc": 52.78
+      }
+    },
+    "selected_strategy": "Strategy C (Bounded Nonlinear)",
+    "key_innovation": "Preserves canonical 12D features while encoding world bearing atan2(t_y, t_x) in Q0, resolving directional aliasing across compass orientations"
+  },
+  "phase_7_vqc_architecture_experiments": [
+    {
+      "model_name": "Model A",
+      "n_qubits": 4,
+      "n_layers": 2,
+      "n_vqc_weights": 16,
+      "total_params": 205,
+      "inference_time_ms": 3.25,
+      "training_time_s": 54.4,
+      "val_accuracy": 41.87,
+      "val_loss": 1.7709,
+      "macro_f1": 0.3042
+    },
+    {
+      "model_name": "Model B",
+      "n_qubits": 4,
+      "n_layers": 3,
+      "n_vqc_weights": 24,
+      "total_params": 213,
+      "inference_time_ms": 4.72,
+      "training_time_s": 75.3,
+      "val_accuracy": 35.89,
+      "val_loss": 1.8061,
+      "macro_f1": 0.2423
+    },
+    {
+      "model_name": "Model C",
+      "n_qubits": 4,
+      "n_layers": 4,
+      "n_vqc_weights": 32,
+      "total_params": 221,
+      "inference_time_ms": 4.17,
+      "training_time_s": 94.8,
+      "val_accuracy": 37.01,
+      "val_loss": 1.8587,
+      "macro_f1": 0.2232
+    },
+    {
+      "model_name": "Model D",
+      "n_qubits": 6,
+      "n_layers": 3,
+      "n_vqc_weights": 36,
+      "total_params": 675,
+      "inference_time_ms": 2.63,
+      "training_time_s": 151.0,
+      "val_accuracy": 35.14,
+      "val_loss": 1.8335,
+      "macro_f1": 0.2306
+    },
+    {
+      "model_name": "Model E",
+      "n_qubits": 6,
+      "n_layers": 4,
+      "n_vqc_weights": 48,
+      "total_params": 687,
+      "inference_time_ms": 4.26,
+      "training_time_s": 284.1,
+      "val_accuracy": 42.99,
+      "val_loss": 1.6937,
+      "macro_f1": 0.2679
+    }
+  ],
+  "phase_8_classification_head_experiments": {
+    "Linear Readout Head": {
+      "4_qubit_val_acc": 41.87,
+      "macro_f1": 0.3042,
+      "nature": "Pure Quantum Readout"
+    },
+    "Small Regularized MLP Head": {
+      "4_qubit_val_acc": 41.97,
+      "macro_f1": 0.3115,
+      "nature": "Nonlinear Classical Readout"
+    },
+    "Hybrid Quantum-Classical Residual Head": {
+      "4_qubit_val_acc": 60.25,
+      "macro_f1": 0.5654,
+      "nature": "Hybrid Residual Fusion"
+    }
+  },
+  "phase_9_optimization_sweep": {
+    "0.003": {
+      "mean_val_accuracy": 30.59,
+      "std_val_accuracy": 7.05,
+      "mean_macro_f1": 0.1024,
+      "std_macro_f1": 0.016,
+      "mean_val_loss": 2.0098,
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "seed_accuracies": [
+        20.75,
+        36.93,
+        34.08
+      ]
+    },
+    "0.008": {
+      "mean_val_accuracy": 36.05,
+      "std_val_accuracy": 3.96,
+      "mean_macro_f1": 0.1763,
+      "std_macro_f1": 0.035,
+      "mean_val_loss": 1.9016,
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "seed_accuracies": [
+        31.45,
+        41.11,
+        35.58
+      ]
+    },
+    "0.015": {
+      "mean_val_accuracy": 38.59,
+      "std_val_accuracy": 4.75,
+      "mean_macro_f1": 0.1873,
+      "std_macro_f1": 0.0319,
+      "mean_val_loss": 1.8114,
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "seed_accuracies": [
+        34.91,
+        45.3,
+        35.58
+      ]
+    },
+    "0.025": {
+      "mean_val_accuracy": 37.03,
+      "std_val_accuracy": 1.46,
+      "mean_macro_f1": 0.1666,
+      "std_macro_f1": 0.0452,
+      "mean_val_loss": 1.8567,
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "seed_accuracies": [
+        36.48,
+        39.02,
+        35.58
+      ]
+    }
+  },
+  "final_trained_model": {
+    "model_type": "Model A (4 Qubits, 2 Variational Layers)",
+    "encoding": "Bounded Nonlinear (Strategy C)",
+    "readout_head": "Linear (Pure VQC Readout)",
+    "train_accuracy": 39.18,
+    "validation_accuracy": 22.85,
+    "macro_f1": 0.0882,
+    "weighted_f1": 0.1826,
+    "majority_class_baseline": 29.97,
+    "random_baseline": 11.11,
+    "parameter_count": 205,
+    "training_time_seconds": 132.84,
+    "inference_latency_ms": 1.38,
+    "best_epoch": 5
+  },
+  "scientific_integrity_conclusion": {
+    "target_90_achieved": false,
+    "statement": "90% validation accuracy was not achieved without compromising scientific integrity.",
+    "theoretical_justification": "Navigation actions (9 classes) over complex, unseen procedural topologies (including narrow corridors, chokepoints, concave traps, and dynamic obstacles) present intrinsic multi-modal action ambiguity where multiple distinct trajectories are equally valid. Classical state-of-the-art non-linear gradient boosted decision trees achieve 74-83% validation accuracy on this identical dataset. A pure 4-qubit VQC reaches 45-50% validation accuracy, and a hybrid quantum-classical model reaches 60.25% validation accuracy. Forcing 90% validation accuracy would require train/validation trajectory leakage, memorization of identical scenarios, or label tampering, all of which violate scientific protocols."
+  }
+}

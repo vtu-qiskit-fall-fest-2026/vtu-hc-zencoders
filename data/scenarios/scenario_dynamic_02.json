@@ -1,0 +1,39 @@
+{
+  "name": "scenario_dynamic_02",
+  "id": "scenario_dynamic_02",
+  "type": "dynamic",
+  "scenario_type": "Circular dynamic orbit",
+  "difficulty": "Dynamic Hard",
+  "description": "Circular moving obstacle orbiting the central airspace along horizontal transit corridor",
+  "solvable": true,
+  "bounds": [50.0, 50.0],
+  "start": [5.0, 25.0],
+  "target": [45.0, 25.0],
+  "max_steps": 140,
+  "obstacles": [
+    {
+      "id": 0,
+      "type": "static",
+      "position": [25.0, 14.0],
+      "radius": 2.5
+    },
+    {
+      "id": 1,
+      "type": "static",
+      "position": [25.0, 36.0],
+      "radius": 2.5
+    },
+    {
+      "id": 2,
+      "type": "moving",
+      "pattern": "circular",
+      "position": [25.0, 19.0],
+      "radius": 2.0,
+      "center": [25.0, 25.0],
+      "orbit_radius": 6.0,
+      "angular_speed": 0.25,
+      "phase": 0.0,
+      "bounds": [0.0, 0.0, 50.0, 50.0]
+    }
+  ]
+}

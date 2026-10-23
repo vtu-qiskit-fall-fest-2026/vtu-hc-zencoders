@@ -1,0 +1,36 @@
+{
+  "name": "scenario_dynamic_01",
+  "id": "scenario_dynamic_01",
+  "type": "dynamic",
+  "scenario_type": "Linear dynamic corridor",
+  "difficulty": "Dynamic Medium",
+  "description": "Linear moving obstacle crossing perpendicular to the UAV primary flight route",
+  "solvable": true,
+  "bounds": [50.0, 50.0],
+  "start": [5.0, 5.0],
+  "target": [45.0, 45.0],
+  "max_steps": 140,
+  "obstacles": [
+    {
+      "id": 0,
+      "type": "static",
+      "position": [15.0, 18.0],
+      "radius": 2.0
+    },
+    {
+      "id": 1,
+      "type": "static",
+      "position": [35.0, 32.0],
+      "radius": 2.0
+    },
+    {
+      "id": 2,
+      "type": "moving",
+      "pattern": "linear",
+      "position": [8.0, 25.0],
+      "radius": 2.0,
+      "velocity": [0.6, 0.0],
+      "bounds": [0.0, 0.0, 50.0, 50.0]
+    }
+  ]
+}

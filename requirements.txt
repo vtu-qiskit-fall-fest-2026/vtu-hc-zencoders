@@ -1,0 +1,21 @@
+# Q-Nav — Quantum-Assisted UAV Navigation
+# Core Dependencies and Frameworks
+
+# Scientific Computing & Mathematics
+numpy>=1.26.0,<3.0.0
+scipy>=1.12.0
+pandas>=2.0.0
+scikit-learn>=1.4.0
+
+# Quantum Computing (Qiskit 2.x Architecture)
+qiskit>=2.0.0
+qiskit-aer>=0.16.0
+qiskit-ibm-runtime>=0.47.0
+
+# Visualization & Interactive UI
+matplotlib>=3.8.0
+plotly>=5.18.0
+streamlit>=1.35.0
+
+# Testing & Quality Assurance
+pytest>=8.0.0

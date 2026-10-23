@@ -1,0 +1,45 @@
+{
+  "name": "scenario_dynamic_04",
+  "id": "scenario_dynamic_04",
+  "type": "dynamic",
+  "scenario_type": "Dual counter-flow dynamic crossing",
+  "difficulty": "Dynamic Hard",
+  "description": "Dual opposing vertical moving obstacles crossing perpendicular to horizontal UAV transit corridor",
+  "solvable": true,
+  "bounds": [50.0, 50.0],
+  "start": [5.0, 25.0],
+  "target": [45.0, 25.0],
+  "max_steps": 140,
+  "obstacles": [
+    {
+      "id": 0,
+      "type": "static",
+      "position": [18.0, 12.0],
+      "radius": 2.0
+    },
+    {
+      "id": 1,
+      "type": "static",
+      "position": [32.0, 38.0],
+      "radius": 2.0
+    },
+    {
+      "id": 2,
+      "type": "moving",
+      "pattern": "linear",
+      "position": [18.0, 38.0],
+      "radius": 2.0,
+      "velocity": [0.0, -0.5],
+      "bounds": [0.0, 0.0, 50.0, 50.0]
+    },
+    {
+      "id": 3,
+      "type": "moving",
+      "pattern": "linear",
+      "position": [32.0, 12.0],
+      "radius": 2.0,
+      "velocity": [0.0, 0.5],
+      "bounds": [0.0, 0.0, 50.0, 50.0]
+    }
+  ]
+}
