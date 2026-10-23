@@ -1,9 +1,17 @@
-## 👥 Team Details
+# Zencoders
 
-* **Team Name:** Zencoders
-* **Team ID:** VTU-QFF-HC-0139
-* **Project Name:** Q-Nav — Quantum-Assisted UAV Navigation
-* **Hackathon:** VTU-Qiskit Fall Fest 2026
+**VTU-QFF-HC-0139** | Tier: **Online**
+
+---
+
+|                  |                                                                                       |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| **Team**         | Zencoders                                                                             |
+| **Team ID**      | VTU-QFF-HC-0139                                                                       |
+| **Tier**         | Online                                                                                |
+| **Repository**   | [vtu-hc-zencoders](https://github.com/vtu-qiskit-fall-fest-2026/vtu-hc-zencoders.git) |
+| **Organisation** | [vtu-qiskit-fall-fest-2026](https://github.com/vtu-qiskit-fall-fest-2026)             |
+| **Event**        | VTU-QFF Hackathon — VTU-Qiskit Fall Fest 2026                                         |
 
 ### Team Members
 
@@ -12,6 +20,7 @@
 | 1      | Sai Lahari      | Team Lead   |
 | 2      | Shaik Karimulla | Team Member |
 | 3      | Sunku Kamalesh  | Team Member |
+
 
 # Q-Nav — Quantum-Assisted UAV Navigation
 
