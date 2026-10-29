@@ -1,0 +1,14 @@
+{
+  "total_decision_steps": 1740,
+  "divergent_steps": 252,
+  "divergence_rate": 0.1448,
+  "quantum_matches_classical": 714,
+  "quantum_classical_match_rate": 0.4103,
+  "hybrid_matches_classical": 966,
+  "hybrid_classical_match_rate": 0.5552,
+  "pure_quantum_safety_overrides": 0,
+  "hybrid_safety_overrides": 0,
+  "mean_trajectory_step_difference": 0.0,
+  "mean_path_length_difference": 0.0,
+  "hybrid_weight": 0.7
+}

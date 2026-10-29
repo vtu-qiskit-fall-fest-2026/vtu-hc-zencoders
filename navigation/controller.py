@@ -102,6 +102,11 @@ class NavigationController:
         self.recovery_start_dist: Optional[float] = None
         self.last_recovery_step = -100
 
+        # Phase 3 safety-aware action masking state and telemetry
+        self.last_pure_quantum_mask_info: Optional[Dict[str, Any]] = None
+        self.last_hybrid_mask_info: Optional[Dict[str, Any]] = None
+        self.safety_masking_log: List[Dict[str, Any]] = []
+
     def reset(
         self,
         start_position: Optional[Tuple[float, float]] = None,
@@ -125,6 +130,9 @@ class NavigationController:
         self.recovery_side = None
         self.recovery_start_dist = None
         self.last_recovery_step = -100
+        self.last_pure_quantum_mask_info = None
+        self.last_hybrid_mask_info = None
+        self.safety_masking_log.clear()
         self.safety_layer.reset()
         self.safety_layer.obstacles = self.env.obstacles
         self.safety_layer.map_width = self.env.map_width
@@ -238,6 +246,15 @@ class NavigationController:
         if safe_actions is None:
             safe_actions = self.safety_layer.get_safe_actions(state)
 
+        # Apply pre-selection safety masking and probability renormalization
+        mask_info = self.safety_layer.compute_safe_action_probabilities(
+            quantum_probs=quantum_probs,
+            safe_actions=safe_actions,
+            num_actions=len(self.action_names),
+        )
+        self.last_pure_quantum_mask_info = mask_info
+        q_safe = mask_info["normalized_probabilities"]
+
         stay_idx = (
             self.config.navigation.action_names.index("STAY")
             if "STAY" in self.config.navigation.action_names
@@ -245,11 +262,6 @@ class NavigationController:
         )
         if len(safe_actions) == 0:
             return stay_idx, 0.0
-
-        if isinstance(quantum_probs, dict):
-            q_arr = np.array([quantum_probs.get(k, 0.0) for k in self.action_names], dtype=float)
-        else:
-            q_arr = np.asarray(quantum_probs, dtype=float)
 
         if len(safe_actions) == 1:
             return safe_actions[0], 1.0
@@ -280,7 +292,7 @@ class NavigationController:
                     continue
                 u_v = vec / v_norm
                 prog = float(np.dot(u_v, u_t))
-                scores[a_idx] = q_arr[a_idx] + 0.15 * prog
+                scores[a_idx] = q_safe[a_idx] + 0.15 * prog
 
                 if self.action_history:
                     last_vec = np.array(self.action_vectors[self.action_history[-1]], dtype=float)
@@ -310,6 +322,16 @@ class NavigationController:
         # Get safe actions from safety layer
         safe_actions = self.safety_layer.get_safe_actions(state)
 
+        # Apply pre-selection safety masking and probability renormalization
+        mask_info = self.safety_layer.compute_safe_action_probabilities(
+            quantum_probs=quantum_probs,
+            safe_actions=safe_actions,
+            num_actions=len(self.action_names),
+        )
+        self.last_hybrid_mask_info = mask_info
+        q_safe = mask_info["normalized_probabilities"]
+        unmasked_top_act = mask_info["unmasked_action"]
+
         stay_idx = (
             self.config.navigation.action_names.index("STAY")
             if "STAY" in self.config.navigation.action_names
@@ -318,15 +340,6 @@ class NavigationController:
         if len(safe_actions) == 0:
             return stay_idx  # STAY (emergency)
 
-        # Parse quantum probabilities
-        if isinstance(quantum_probs, dict):
-            q_arr = np.array(
-                [quantum_probs.get(k, 0.0) for k in self.config.navigation.action_names],
-                dtype=float,
-            )
-        else:
-            q_arr = np.asarray(quantum_probs, dtype=float)
-
         q_weight = float(getattr(self.config.navigation, "hybrid_quantum_weight", 0.7))
 
         if len(safe_actions) == 1:
@@ -334,13 +347,17 @@ class NavigationController:
             self.fusion_log.append({
                 "step": state.get("step", self.env.current_step),
                 "classical_action": int(classical_action_idx),
-                "quantum_top_action": int(np.argmax(q_arr)),
+                "quantum_top_action": int(unmasked_top_act),
+                "quantum_masked_action": int(mask_info["masked_action"]),
                 "fused_action": int(selected_action),
                 "classical_action_name": self.action_names[classical_action_idx],
-                "quantum_top_action_name": self.action_names[int(np.argmax(q_arr))],
+                "quantum_top_action_name": self.action_names[unmasked_top_act],
+                "quantum_masked_action_name": self.action_names[int(mask_info["masked_action"])],
                 "fused_action_name": self.action_names[selected_action],
                 "fusion_confidence": 1.0,
                 "hybrid_weight": q_weight,
+                "masking_changed_action": bool(mask_info["masking_changed_action"]),
+                "probability_mass_removed": float(mask_info["probability_mass_removed"]),
             })
             return selected_action
 
@@ -375,7 +392,7 @@ class NavigationController:
 
                 u_v = vec / v_norm
                 prog = float(np.dot(u_v, u_t))
-                q_val = float(q_arr[a_idx])
+                q_val = float(q_safe[a_idx])
                 c_val = 1.0 if a_idx == classical_action_idx else 0.0
 
                 scores[a_idx] = 0.5 * q_val + 0.3 * c_val + 0.2 * max(0.0, prog)
@@ -396,13 +413,17 @@ class NavigationController:
         self.fusion_log.append({
             "step": state.get("step", self.env.current_step),
             "classical_action": int(classical_action_idx),
-            "quantum_top_action": int(np.argmax(q_arr)),
+            "quantum_top_action": int(unmasked_top_act),
+            "quantum_masked_action": int(mask_info["masked_action"]),
             "fused_action": int(selected_action),
             "classical_action_name": self.action_names[classical_action_idx],
-            "quantum_top_action_name": self.action_names[int(np.argmax(q_arr))],
+            "quantum_top_action_name": self.action_names[unmasked_top_act],
+            "quantum_masked_action_name": self.action_names[int(mask_info["masked_action"])],
             "fused_action_name": self.action_names[selected_action],
             "fusion_confidence": float(scores[selected_action]),
             "hybrid_weight": q_weight,
+            "masking_changed_action": bool(mask_info["masking_changed_action"]),
+            "probability_mass_removed": float(mask_info["probability_mass_removed"]),
         })
 
         return selected_action
@@ -437,9 +458,14 @@ class NavigationController:
             # Dynamically follow obstacle contour with committed recovery side
             self.recovery_vector = self.compute_tangential_escape(state)
 
-            # Exit condition 1: Made meaningful progress towards target and safely clear of obstacle
+            # Exit condition 1: Made meaningful progress towards target, safely clear of obstacle,
+            # and recovery guidance is oriented towards goal direction (avoid premature exit while contouring away)
             goal_progress = (self.recovery_start_dist - curr_dist) if self.recovery_start_dist is not None else 0.0
-            if goal_progress > 2.0 and min_dist > 2.2:
+            t_diff = target_pos - drone_pos
+            u_t = t_diff / np.linalg.norm(t_diff) if np.linalg.norm(t_diff) > 1e-6 else np.array([1.0, 0.0])
+            rec_align = float(np.dot(self.recovery_vector, u_t)) if self.recovery_vector is not None else 1.0
+
+            if goal_progress > 2.0 and min_dist > 2.2 and rec_align > 0.0:
                 self.recovery_mode = False
                 self.recovery_side = None
                 self.recovery_steps_left = 0
@@ -496,6 +522,10 @@ class NavigationController:
                 hybrid_weight = 1.0
                 m_type = "quantum"
 
+            active_mask_info = (
+                self.last_hybrid_mask_info if self.is_hybrid else self.last_pure_quantum_mask_info
+            )
+            q_norm_probs = active_mask_info["normalized_probabilities"] if active_mask_info else None
             chosen_vec = np.array(self.action_vectors[chosen_name], dtype=float)
             decision = {
                 "model_type": m_type,
@@ -505,10 +535,14 @@ class NavigationController:
                     name: (2.0 if name == chosen_name else 0.0)
                     for name in self.action_names
                 },
-                "action_probabilities": q_probs if isinstance(q_probs, dict) else {
-                    name: float(q_probs[i])
-                    for i, name in enumerate(self.action_names)
-                },
+                "action_probabilities": (
+                    {name: float(q_norm_probs[i]) for i, name in enumerate(self.action_names)}
+                    if q_norm_probs is not None
+                    else (q_probs if isinstance(q_probs, dict) else {
+                        name: float(q_probs[i])
+                        for i, name in enumerate(self.action_names)
+                    })
+                ),
                 "confidence": conf,
                 "circuit_execution_time": qc_time,
             }
@@ -629,6 +663,53 @@ class NavigationController:
             "collided": bool(self.env.collided),
             "model_type": final_action["model_type"],
         }
+
+        # Phase 3 safety-aware action masking step-level telemetry
+        active_mask_info = (
+            self.last_hybrid_mask_info if self.is_hybrid else self.last_pure_quantum_mask_info
+        ) if is_quantum else None
+
+        if active_mask_info:
+            orig_p = active_mask_info["original_probabilities"]
+            norm_p = active_mask_info["normalized_probabilities"]
+            telemetry.update({
+                "original_quantum_probabilities": {
+                    name: float(orig_p[i]) for i, name in enumerate(self.action_names)
+                },
+                "safe_action_mask": active_mask_info["safe_action_mask"],
+                "masked_actions_count": int(active_mask_info["masked_actions_count"]),
+                "probability_mass_removed": round(float(active_mask_info["probability_mass_removed"]), 4),
+                "normalized_probabilities": {
+                    name: float(norm_p[i]) for i, name in enumerate(self.action_names)
+                },
+                "unmasked_quantum_action": self.action_names[active_mask_info["unmasked_action"]],
+                "masking_changed_action": bool(active_mask_info["masking_changed_action"]),
+                "emergency_fallback": bool(active_mask_info["emergency_fallback"]),
+                "is_safe": bool(active_mask_info["is_safe"]),
+            })
+            self.safety_masking_log.append({
+                "step": int(self.env.current_step),
+                "masked_actions_count": int(active_mask_info["masked_actions_count"]),
+                "probability_mass_removed": float(active_mask_info["probability_mass_removed"]),
+                "emergency_fallback": bool(active_mask_info["emergency_fallback"]),
+                "masking_changed_action": bool(active_mask_info["masking_changed_action"]),
+            })
+        else:
+            telemetry.update({
+                "original_quantum_probabilities": {},
+                "safe_action_mask": [1] * len(self.action_names),
+                "masked_actions_count": 0,
+                "probability_mass_removed": 0.0,
+                "normalized_probabilities": {},
+                "unmasked_quantum_action": "N/A",
+                "masking_changed_action": False,
+                "emergency_fallback": False,
+                "is_safe": True,
+            })
+
+        telemetry["recovery_active"] = bool(self.recovery_mode)
+        telemetry["recovery_side"] = str(self.recovery_side) if self.recovery_side else "none"
+        telemetry["safety_interventions"] = int(self.safety_layer.intervention_count)
         self.history.append(telemetry)
 
         # Capture dynamic obstacles telemetry if active
@@ -758,6 +839,7 @@ class NavigationController:
             "dynamic_telemetry_history": self.dynamic_telemetry_history.copy(),
             "fusion_log": self.fusion_log.copy(),
             "explanation_log": self.explanation_log.copy(),
+            "safety_masking_log": self.safety_masking_log.copy(),
             "total_explanation_time": float(sum(self.explanation_times)),
             "mean_explanation_time": float(np.mean(self.explanation_times)) if self.explanation_times else 0.0,
             "info": info,

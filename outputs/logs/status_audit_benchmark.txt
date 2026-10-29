@@ -1,0 +1,69 @@
+==============================================================================
+STATUS AUDIT BENCHMARK RUN 1: DIRECT USER SPECIFIED COMMAND
+Command: python run.py --all-scenarios --seeds 3 --save-plots
+Execution Mode: Static Scenarios (5 scenarios x 3 seeds = 15 episodes per model)
+==============================================================================
+[2026-10-29 12:09:20] [INFO] [qnav]: Initializing Q-Nav Platform...
+[2026-10-29 12:09:20] [INFO] [qnav]: Loaded 5 scenarios and 3 obstacle maps.
+[2026-10-29 12:09:20] [INFO] [qnav]: Checkpoint architecture: 6Q3L
+[2026-10-29 12:09:20] [INFO] [qnav]: Benchmark architecture: 6Q3L
+[2026-10-29 12:09:20] [INFO] [qnav]: Checkpoint loaded: True
+[2026-10-29 12:09:20] [INFO] [qnav]: Executing benchmark: 5 scenario(s) x 3 seed(s) x models (Dynamic: False).
+
+                      Q-NAV BENCHMARK PERFORMANCE SUMMARY
+==============================================================================
+Metric                         | Classical Baseline | Quantum-Assisted  
+------------------------------------------------------------------------------
+Success Rate                   | 40.0%             | 60.0%            
+Mean Path Length (units)       | 144.30             | 134.40            
+Mean Steps Taken               | 96.2               | 89.6              
+Mean Collisions Count          | 0.00               | 0.00              
+Mean Collision Rate            | 0.000              | 0.000             
+Navigation Efficiency          | 47.79%            | 36.99%           
+Safety Interventions           | 46.2               | 0.0               
+Mean Decision Time (s)         | 0.000400           | 0.003700          
+Mean Episode Time (s)          | 0.3833             | 0.8529            
+==============================================================================
+Note on Run 1: When run without '--hybrid', static benchmark executes Classical vs Quantum (Pure Quantum).
+
+==============================================================================
+STATUS AUDIT BENCHMARK RUN 2: 3-MODEL BENCHMARK WITH HYBRID DECISION FUSION
+Command: python run.py --all-scenarios --seeds 3 --save-plots --hybrid
+Execution Mode: Static Scenarios (5 scenarios x 3 seeds = 15 episodes per model x 3 models = 45 episodes)
+==============================================================================
+[2026-10-29 12:10:35] [INFO] [qnav]: Initializing Q-Nav Platform...
+[2026-10-29 12:10:35] [INFO] [qnav]: Loaded 5 scenarios and 3 obstacle maps.
+[2026-10-29 12:10:35] [INFO] [qnav]: Checkpoint architecture: 6Q3L
+[2026-10-29 12:10:35] [INFO] [qnav]: Benchmark architecture: 6Q3L
+[2026-10-29 12:10:35] [INFO] [qnav]: Checkpoint loaded: True
+
+                 Q-NAV DYNAMIC BENCHMARK: 3-MODEL PERFORMANCE SUMMARY
+==============================================================================================
+Metric                       | Classical APF      | Pure Quantum       | Hybrid Quantum    
+----------------------------------------------------------------------------------------------
+Success Rate                 | 40.0%             | 80.0%             | 80.0%            
+Mean Path Length (units)     | 144.30             | 117.00             | 117.00            
+Mean Steps Taken             | 96.2               | 78.0               | 78.0              
+Mean Collisions Count        | 0.00               | 0.00               | 0.00              
+Mean Collision Rate          | 0.000              | 0.000              | 0.000             
+Min Moving Clearance         | 50.00              | 50.00              | 50.00             
+Predicted Collisions         | 0.0                | 0.0                | 0.0               
+Safety Interventions         | 46.2               | 0.0                | 0.0               
+Navigation Efficiency        | 47.79%            | 46.75%            | 46.75%           
+Mean Decision Time (s)       | 0.000400           | 0.004800           | 0.003700          
+Mean Episode Time (s)        | 0.3982             | 1.0678             | 0.7787            
+==============================================================================================
+
+==============================================================================================
+                 ACTION DIVERGENCE & TELEMETRY BREAKDOWN: QUANTUM vs HYBRID
+==============================================================================================
+Total Evaluated Decision Steps         | 2340
+Divergent Actions (Quantum != Hybrid)  | 438 (18.7%)
+Quantum Matches Classical APF          | 846 (36.1%)
+Hybrid Matches Classical APF           | 1254 (53.6%)
+Pure Quantum Safety Overrides          | 0
+Hybrid Safety Overrides                | 0
+Mean Trajectory Step Difference        | 0.0 steps
+Mean Path Length Difference            | 0.00 units
+Configured Hybrid Weight (Quantum)     | 0.70
+==============================================================================================

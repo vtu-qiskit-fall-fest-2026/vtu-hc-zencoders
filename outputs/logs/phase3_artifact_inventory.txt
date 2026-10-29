@@ -1,0 +1,46 @@
+================================================================================
+Q-NAV PHASE 3A ARTIFACT INVENTORY & CHECKPOINT VERIFICATION
+Timestamp (UTC): 2026-10-29T07:36:17.379963+00:00
+Git Commit Checkpoint: 1862ae8 (Phase 2 Complete: Persistent tangential wall-following recovery fix)
+================================================================================
+
+--- CORE PRESERVED ARTIFACTS ---
+EXISTS  | outputs/logs/audit_tests_before.txt              |   14727 bytes | 2026-10-29T06:49:16.909872+00:00 | SHA256: bdd0c8bf4c16c0b870a01d80b03df5fff15cc26c43ec6e7735f2ef4e756df250
+EXISTS  | outputs/logs/audit_benchmark_before.txt          |    4835 bytes | 2026-10-29T06:49:33.576654+00:00 | SHA256: 536aa3f9d27daab40b8595d204619c1ad07a47fb95ba6d0b04b547d2c8503bc8
+EXISTS  | outputs/metrics/baseline_results.csv             |     353 bytes | 2026-10-29T06:49:42.308476+00:00 | SHA256: 1e02828f80d149c187f58e927f0c827f582f9616921cc275eb5a1efa161b22a7
+EXISTS  | outputs/logs/recovery_fix_tests.txt              |   15361 bytes | 2026-10-29T07:16:57.825968+00:00 | SHA256: f6ac97fec7a9e05bce9b7b09af544e563e793c288def535bba1e0dbc192aba67
+EXISTS  | outputs/logs/recovery_fix_benchmark.txt          |   12951 bytes | 2026-10-29T07:19:46.655452+00:00 | SHA256: 2f5de1863339b685f66f877592638b9a55dc0d4d764fc6f1d263a9d57bdfaf20
+EXISTS  | outputs/metrics/recovery_fix_results.csv         |     351 bytes | 2026-10-29T07:19:58.874459+00:00 | SHA256: 8e6401e34af4353104d218d531e9c000e4d1b3ab62affd32f6184ca00c553a5e
+EXISTS  | outputs/metrics/quantum_weights.npz              |   51873 bytes | 2026-10-07T00:42:15.324246+00:00 | SHA256: dff4e87f0378cb9698d3cc5b72a17cd370bb6b593ccbd603ce3446bfd7d7105c
+EXISTS  | outputs/metrics/original_quantum_weights.npz     |   51873 bytes | 2026-10-07T00:42:15.324246+00:00 | SHA256: dff4e87f0378cb9698d3cc5b72a17cd370bb6b593ccbd603ce3446bfd7d7105c
+EXISTS  | outputs/metrics/original_training_metrics.json   |    1136 bytes | 2026-10-07T00:42:15.325253+00:00 | SHA256: dfe8c39861e29e768bb989bc5126bdcb67a62e93b38fcd701338817995f53cac
+
+--- PHASE 2 PRESERVED FIGURES (outputs/figures/recovery_fix_*.png) ---
+EXISTS  | outputs/figures\recovery_fix_architecture_comparison.png |  324542 bytes | 2026-10-06T17:15:00.045786+00:00 | SHA256: bf74eacceeebdb84308418b651cd02752f0a4ebb2c378c4483e6b5c30a0beacf
+EXISTS  | outputs/figures\recovery_fix_benchmark_summary.png |  219316 bytes | 2026-10-29T07:17:56.431238+00:00 | SHA256: c57e6beeef23105f2151632971b78dbb92087bdd96300be6d63320e24e244aec
+EXISTS  | outputs/figures\recovery_fix_collision_comparison.png |   39002 bytes | 2026-10-29T07:17:56.950801+00:00 | SHA256: 99037984851f6f0c0b1c43832149ee0a93174f681894230251057a9455817fa6
+EXISTS  | outputs/figures\recovery_fix_efficiency_comparison.png |   44878 bytes | 2026-10-29T07:17:57.092782+00:00 | SHA256: 596b6c30d8c20af1b574161e002b9a6dce960a3ccec7b77d3e50448a21070ac6
+EXISTS  | outputs/figures\recovery_fix_path_length_comparison.png |   49320 bytes | 2026-10-29T07:17:56.797238+00:00 | SHA256: 94aaf4b7fc320dff2a5eccf6ffc1ac9e713a30aabd23c0586b2022e7bbb1c654
+EXISTS  | outputs/figures\recovery_fix_quantum_class_distribution.png |  212092 bytes | 2026-10-06T17:14:59.239559+00:00 | SHA256: 9072d3f087e04a65efdb5dd2f4e0557ec1cb7b1e7a8d788bd66af3c660caf8cf
+EXISTS  | outputs/figures\recovery_fix_quantum_confusion_matrix.png |  326931 bytes | 2026-10-06T17:14:58.612277+00:00 | SHA256: 44fa6bd783143f45e50ab7e615dd34a577fd69bd0396352dfd986ef86a5ace65
+EXISTS  | outputs/figures\recovery_fix_quantum_training_curve.png |  236084 bytes | 2026-10-06T17:14:57.247480+00:00 | SHA256: 7ba3ee6b3f78340988d16966ff0e2f05ac772fdf375f5be866314d7d970afd91
+EXISTS  | outputs/figures\recovery_fix_quantum_validation_accuracy.png |  222326 bytes | 2026-10-06T17:14:57.678666+00:00 | SHA256: 723f4b72c498d096964ea7c9f76395c4510041e7978bc71d386c41006add9fae
+EXISTS  | outputs/figures\recovery_fix_safety_intervention_comparison.png |   43982 bytes | 2026-10-29T07:17:57.255061+00:00 | SHA256: 29fff7101b95ae4fa3427f6b61902a4c3f0f4fffbad293cff3a8f0f355dc7670
+EXISTS  | outputs/figures\recovery_fix_scenario_01_trajectory.png |  160717 bytes | 2026-10-29T07:17:54.374456+00:00 | SHA256: 4ab43625046e313f7d470436fbf973f1892c120828ba9b73a74a291c60289039
+EXISTS  | outputs/figures\recovery_fix_scenario_02_trajectory.png |  148238 bytes | 2026-10-29T07:17:54.660691+00:00 | SHA256: f93e2123fef2ecc7a1d91fa071088d2594a263eae56488eb99956e1a8b610366
+EXISTS  | outputs/figures\recovery_fix_scenario_03_trajectory.png |  166697 bytes | 2026-10-29T07:17:54.958489+00:00 | SHA256: 504101e75ee1e156e9ad6cd934ed63c65ea41b4acc0a0d2fec575f2cc6b154c1
+EXISTS  | outputs/figures\recovery_fix_scenario_04_trajectory.png |  148296 bytes | 2026-10-29T07:17:55.228665+00:00 | SHA256: 46d506bd8d3af9f24209d15637ef50841e05db9b3733c81c3d6e5b3ce4378741
+EXISTS  | outputs/figures\recovery_fix_scenario_05_trajectory.png |  162845 bytes | 2026-10-29T07:17:55.516833+00:00 | SHA256: 2e108a24c84efc1277281f8615ef2769949856d282c4041f544316fa09cf3826
+EXISTS  | outputs/figures\recovery_fix_scenario_dynamic_01_trajectory.png |  146436 bytes | 2026-10-07T04:28:11.690123+00:00 | SHA256: d6585fb011c3b26799d5754763772a6e59c05336324f74b369b749ff10992e77
+EXISTS  | outputs/figures\recovery_fix_scenario_dynamic_02_trajectory.png |  173092 bytes | 2026-10-07T04:28:12.051399+00:00 | SHA256: 7debbbef702c1b3a7691a15875e01ed6f4e1e5704f96741e4aef4613724b52cb
+EXISTS  | outputs/figures\recovery_fix_scenario_dynamic_03_trajectory.png |  160556 bytes | 2026-10-07T04:28:12.511220+00:00 | SHA256: 381cddf862dd090c5b10060faca530ba76cdc0a3249d9c84deaf6ff509be0fca
+EXISTS  | outputs/figures\recovery_fix_scenario_dynamic_04_trajectory.png |  158945 bytes | 2026-10-07T04:28:12.978015+00:00 | SHA256: 2c125c443a7b6a638951282580ed28571b5689d03ad9118aa8ca71565834e7bc
+EXISTS  | outputs/figures\recovery_fix_scenario_dynamic_05_trajectory.png |  176593 bytes | 2026-10-07T04:28:13.323867+00:00 | SHA256: 60ee8c4dbd2827f4ec9018c2019cade46e4746279458920cd0e06d824e3091d6
+EXISTS  | outputs/figures\recovery_fix_success_rate_comparison.png |   46575 bytes | 2026-10-29T07:17:56.623938+00:00 | SHA256: f1496a9c6dce5e510b96ae4de56b90eedd72c71af22b3b682e414070e1ee9e5d
+
+--- VERIFICATION SUMMARY ---
+Core artifacts verified: 9/9
+Phase 2 figures verified: 21/21
+Missing files: 0
+Quantum Checkpoint Integrity: outputs/metrics/quantum_weights.npz verified matches backup original_quantum_weights.npz
+Status: ALL ARTIFACTS VERIFIED AND SECURED FOR PHASE 3.

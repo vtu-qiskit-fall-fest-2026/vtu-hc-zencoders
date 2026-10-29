@@ -1,67 +1,73 @@
 {
   "classical": {
     "total_episodes": 15,
-    "success_count": 12,
-    "success_rate": 0.8,
-    "mean_path_length": 120.6,
-    "mean_steps": 80.4,
+    "success_count": 6,
+    "success_rate": 0.4,
+    "mean_path_length": 144.3,
+    "mean_steps": 96.2,
     "mean_collisions": 0.0,
     "mean_collision_count": 0.0,
     "mean_collision_rate": 0.0,
-    "mean_navigation_efficiency": 0.4985,
-    "mean_efficiency": 0.4985,
-    "mean_final_distance": 7.755,
-    "mean_safety_violations": 0.0,
-    "mean_safety_interventions": 0.0,
-    "mean_unsafe_action_attempts": 0.0,
+    "mean_navigation_efficiency": 0.4779,
+    "mean_efficiency": 0.4779,
+    "mean_final_distance": 14.603,
+    "mean_safety_violations": 46.2,
+    "mean_safety_interventions": 46.2,
+    "mean_unsafe_action_attempts": 77.8,
     "mean_boundary_violations": 0.0,
-    "mean_min_obstacle_clearance": 1.396,
-    "mean_min_boundary_clearance": 2.0444,
+    "mean_min_obstacle_clearance": 1.1812,
+    "mean_min_boundary_clearance": 3.9176,
     "mean_predicted_collision_count": 0.0,
     "mean_min_moving_obstacle_clearance": 50.0,
     "mean_moving_obstacle_clearance": 50.0,
-    "mean_progress_ratio": 0.8521,
-    "mean_heading_smoothness": 59.5334,
-    "mean_action_switch_count": 36.8,
-    "mean_oscillation_count": 9.6,
+    "mean_progress_ratio": 0.7143,
+    "mean_heading_smoothness": 211.115,
+    "mean_action_switch_count": 74.6,
+    "mean_oscillation_count": 65.0,
     "mean_decision_time": 0.0003,
     "mean_quantum_circuit_execution_time": 0.0,
-    "mean_reward": 155.2,
-    "mean_duration_seconds": 0.3038,
-    "mean_episode_time": 0.3038,
-    "mean_energy_proxy": 138.46,
+    "mean_reward": 99.93,
+    "mean_duration_seconds": 0.27,
+    "mean_episode_time": 0.27,
+    "mean_energy_proxy": 207.6344,
+    "mean_masked_action_count": 0.0,
+    "mean_probability_mass_removed": 0.0,
+    "mean_emergency_fallback_frequency": 0.0,
+    "total_emergency_fallbacks": 0,
+    "total_timeouts": 9,
+    "timeout_count": 9,
     "distributions": {
       "success_rate": {
-        "mean": 0.8,
-        "std": 0.414,
-        "median": 1.0,
+        "mean": 0.4,
+        "std": 0.5071,
+        "median": 0.0,
         "min": 0.0,
         "max": 1.0,
-        "ci_95": 0.2095
+        "ci_95": 0.2566
       },
       "path_length": {
-        "mean": 120.6,
-        "std": 63.1269,
-        "median": 97.5,
+        "mean": 144.3,
+        "std": 71.5998,
+        "median": 180.0,
         "min": 55.5,
         "max": 210.0,
-        "ci_95": 31.9466
+        "ci_95": 36.2345
       },
       "steps": {
-        "mean": 80.4,
-        "std": 42.0846,
-        "median": 65.0,
+        "mean": 96.2,
+        "std": 47.7332,
+        "median": 120.0,
         "min": 37.0,
         "max": 140.0,
-        "ci_95": 21.2978
+        "ci_95": 24.1563
       },
       "final_distance": {
-        "mean": 7.7546,
-        "std": 13.8331,
-        "median": 1.421,
-        "min": 0.605,
-        "max": 34.472,
-        "ci_95": 7.0005
+        "mean": 14.6034,
+        "std": 13.3722,
+        "median": 12.875,
+        "min": 0.709,
+        "max": 34.307,
+        "ci_95": 6.7672
       },
       "collision_count": {
         "mean": 0.0,
@@ -80,20 +86,20 @@
         "ci_95": 0.0
       },
       "safety_interventions": {
-        "mean": 0.0,
-        "std": 0.0,
-        "median": 0.0,
+        "mean": 46.2,
+        "std": 44.3834,
+        "median": 55.0,
         "min": 0.0,
-        "max": 0.0,
-        "ci_95": 0.0
+        "max": 114.0,
+        "ci_95": 22.4611
       },
       "unsafe_action_attempts": {
-        "mean": 0.0,
-        "std": 0.0,
-        "median": 0.0,
+        "mean": 77.8,
+        "std": 67.1791,
+        "median": 108.0,
         "min": 0.0,
-        "max": 0.0,
-        "ci_95": 0.0
+        "max": 150.0,
+        "ci_95": 33.9973
       },
       "boundary_violations": {
         "mean": 0.0,
@@ -104,20 +110,20 @@
         "ci_95": 0.0
       },
       "min_obstacle_clearance": {
-        "mean": 1.396,
-        "std": 0.179,
-        "median": 1.38,
-        "min": 1.206,
+        "mean": 1.1812,
+        "std": 0.4247,
+        "median": 1.379,
+        "min": 0.69,
         "max": 1.702,
-        "ci_95": 0.0906
+        "ci_95": 0.2149
       },
       "min_boundary_clearance": {
-        "mean": 2.0444,
-        "std": 0.8254,
-        "median": 1.685,
-        "min": 1.108,
-        "max": 3.047,
-        "ci_95": 0.4177
+        "mean": 3.9176,
+        "std": 0.868,
+        "median": 4.2,
+        "min": 2.941,
+        "max": 5.2,
+        "ci_95": 0.4393
       },
       "predicted_collision_count": {
         "mean": 0.0,
@@ -144,51 +150,51 @@
         "ci_95": 0.0
       },
       "navigation_efficiency": {
-        "mean": 0.4985,
-        "std": 0.2609,
-        "median": 0.4103,
-        "min": 0.1793,
+        "mean": 0.4779,
+        "std": 0.2719,
+        "median": 0.3391,
+        "min": 0.1808,
         "max": 0.8571,
-        "ci_95": 0.132
+        "ci_95": 0.1376
       },
       "progress_ratio": {
-        "mean": 0.8521,
-        "std": 0.2558,
-        "median": 0.9645,
-        "min": 0.3585,
-        "max": 0.9893,
-        "ci_95": 0.1294
+        "mean": 0.7143,
+        "std": 0.2442,
+        "median": 0.6781,
+        "min": 0.3616,
+        "max": 0.9875,
+        "ci_95": 0.1236
       },
       "heading_smoothness": {
-        "mean": 59.5334,
-        "std": 53.4022,
-        "median": 30.631,
+        "mean": 211.115,
+        "std": 171.9131,
+        "median": 288.241,
         "min": 10.996,
-        "max": 122.522,
-        "ci_95": 27.0252
+        "max": 383.274,
+        "ci_95": 87.0
       },
       "action_switch_count": {
-        "mean": 36.8,
-        "std": 25.6688,
-        "median": 26.0,
+        "mean": 74.6,
+        "std": 53.444,
+        "median": 99.0,
         "min": 12.0,
-        "max": 69.0,
-        "ci_95": 12.9902
+        "max": 129.0,
+        "ci_95": 27.0464
       },
       "oscillation_count": {
-        "mean": 9.6,
-        "std": 7.2486,
-        "median": 5.0,
+        "mean": 65.0,
+        "std": 52.6701,
+        "median": 87.0,
         "min": 3.0,
-        "max": 20.0,
-        "ci_95": 3.6683
+        "max": 118.0,
+        "ci_95": 26.6548
       },
       "mean_decision_time": {
         "mean": 0.0003,
         "std": 0.0,
-        "median": 0.0003,
-        "min": 0.0003,
-        "max": 0.0004,
+        "median": 0.0002,
+        "min": 0.0002,
+        "max": 0.0003,
         "ci_95": 0.0
       },
       "quantum_circuit_execution_time": {
@@ -200,94 +206,156 @@
         "ci_95": 0.0
       },
       "total_episode_time": {
-        "mean": 0.3038,
-        "std": 0.1833,
-        "median": 0.228,
-        "min": 0.1211,
-        "max": 0.605,
-        "ci_95": 0.0928
+        "mean": 0.27,
+        "std": 0.154,
+        "median": 0.3194,
+        "min": 0.0844,
+        "max": 0.4337,
+        "ci_95": 0.078
       },
       "total_reward": {
-        "mean": 155.204,
-        "std": 69.2622,
-        "median": 173.17,
-        "min": 24.54,
+        "mean": 99.926,
+        "std": 77.6711,
+        "median": 52.02,
+        "min": 24.87,
         "max": 207.32,
-        "ci_95": 35.0515
+        "ci_95": 39.307
       },
       "energy_proxy": {
-        "mean": 138.46,
-        "std": 78.8676,
-        "median": 106.689,
+        "mean": 207.6344,
+        "std": 123.1042,
+        "median": 266.472,
         "min": 58.799,
-        "max": 246.757,
-        "ci_95": 39.9125
+        "max": 324.982,
+        "ci_95": 62.2993
+      },
+      "mean_masked_action_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "mean_probability_mass_removed": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "emergency_fallback_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "emergency_fallback_frequency": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "masking_changed_action_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "masking_changed_action_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "timeout_count": {
+        "mean": 0.6,
+        "std": 0.5071,
+        "median": 1.0,
+        "min": 0.0,
+        "max": 1.0,
+        "ci_95": 0.2566
       }
     }
   },
   "quantum": {
     "total_episodes": 15,
-    "success_count": 12,
-    "success_rate": 0.8,
-    "mean_path_length": 117.0,
-    "mean_steps": 78.0,
+    "success_count": 15,
+    "success_rate": 1.0,
+    "mean_path_length": 87.0,
+    "mean_steps": 58.0,
     "mean_collisions": 0.0,
     "mean_collision_count": 0.0,
     "mean_collision_rate": 0.0,
-    "mean_navigation_efficiency": 0.4675,
-    "mean_efficiency": 0.4675,
-    "mean_final_distance": 8.948,
+    "mean_navigation_efficiency": 0.6128,
+    "mean_efficiency": 0.6128,
+    "mean_final_distance": 1.412,
     "mean_safety_violations": 0.0,
     "mean_safety_interventions": 0.0,
     "mean_unsafe_action_attempts": 0.0,
     "mean_boundary_violations": 0.0,
-    "mean_min_obstacle_clearance": 1.3204,
-    "mean_min_boundary_clearance": 2.7474,
+    "mean_min_obstacle_clearance": 1.2894,
+    "mean_min_boundary_clearance": 2.541,
     "mean_predicted_collision_count": 0.0,
     "mean_min_moving_obstacle_clearance": 50.0,
     "mean_moving_obstacle_clearance": 50.0,
-    "mean_progress_ratio": 0.8321,
-    "mean_heading_smoothness": 45.239,
-    "mean_action_switch_count": 33.8,
-    "mean_oscillation_count": 7.6,
-    "mean_decision_time": 0.0032,
-    "mean_quantum_circuit_execution_time": 0.2316,
-    "mean_reward": 153.06,
-    "mean_duration_seconds": 0.5148,
-    "mean_episode_time": 0.5148,
-    "mean_energy_proxy": 130.5716,
+    "mean_progress_ratio": 0.9699,
+    "mean_heading_smoothness": 24.0332,
+    "mean_action_switch_count": 21.6,
+    "mean_oscillation_count": 4.8,
+    "mean_decision_time": 0.0025,
+    "mean_quantum_circuit_execution_time": 0.1347,
+    "mean_reward": 190.13,
+    "mean_duration_seconds": 0.4075,
+    "mean_episode_time": 0.4075,
+    "mean_energy_proxy": 94.21,
+    "mean_masked_action_count": 1.794,
+    "mean_probability_mass_removed": 0.2617,
+    "mean_emergency_fallback_frequency": 0.0,
+    "total_emergency_fallbacks": 0,
+    "total_timeouts": 0,
+    "timeout_count": 0,
     "distributions": {
       "success_rate": {
-        "mean": 0.8,
-        "std": 0.414,
+        "mean": 1.0,
+        "std": 0.0,
         "median": 1.0,
-        "min": 0.0,
+        "min": 1.0,
         "max": 1.0,
-        "ci_95": 0.2095
+        "ci_95": 0.0
       },
       "path_length": {
-        "mean": 117.0,
-        "std": 51.2891,
-        "median": 96.0,
-        "min": 66.0,
-        "max": 210.0,
-        "ci_95": 25.9559
+        "mean": 87.0,
+        "std": 32.5242,
+        "median": 67.5,
+        "min": 64.5,
+        "max": 147.0,
+        "ci_95": 16.4595
       },
       "steps": {
-        "mean": 78.0,
-        "std": 34.1927,
-        "median": 64.0,
-        "min": 44.0,
-        "max": 140.0,
-        "ci_95": 17.3039
+        "mean": 58.0,
+        "std": 21.6828,
+        "median": 45.0,
+        "min": 43.0,
+        "max": 98.0,
+        "ci_95": 10.973
       },
       "final_distance": {
-        "mean": 8.9478,
-        "std": 16.075,
-        "median": 1.282,
-        "min": 0.697,
-        "max": 39.997,
-        "ci_95": 8.1351
+        "mean": 1.412,
+        "std": 0.3834,
+        "median": 1.618,
+        "min": 0.709,
+        "max": 1.7,
+        "ci_95": 0.194
       },
       "collision_count": {
         "mean": 0.0,
@@ -330,20 +398,20 @@
         "ci_95": 0.0
       },
       "min_obstacle_clearance": {
-        "mean": 1.3204,
-        "std": 0.0613,
-        "median": 1.341,
-        "min": 1.208,
-        "max": 1.38,
-        "ci_95": 0.031
+        "mean": 1.2894,
+        "std": 0.0631,
+        "median": 1.322,
+        "min": 1.202,
+        "max": 1.351,
+        "ci_95": 0.0319
       },
       "min_boundary_clearance": {
-        "mean": 2.7474,
-        "std": 1.5207,
+        "mean": 2.541,
+        "std": 1.0754,
         "median": 2.941,
-        "min": 1.108,
-        "max": 5.2,
-        "ci_95": 0.7696
+        "min": 1.183,
+        "max": 3.593,
+        "ci_95": 0.5442
       },
       "predicted_collision_count": {
         "mean": 0.0,
@@ -370,86 +438,156 @@
         "ci_95": 0.0
       },
       "navigation_efficiency": {
-        "mean": 0.4675,
-        "std": 0.2541,
-        "median": 0.4301,
-        "min": 0.1279,
+        "mean": 0.6128,
+        "std": 0.1614,
+        "median": 0.6202,
+        "min": 0.3656,
         "max": 0.8571,
-        "ci_95": 0.1286
+        "ci_95": 0.0817
       },
       "progress_ratio": {
-        "mean": 0.8321,
-        "std": 0.2983,
-        "median": 0.9773,
-        "min": 0.2557,
-        "max": 0.9826,
-        "ci_95": 0.151
+        "mean": 0.9699,
+        "std": 0.0114,
+        "median": 0.969,
+        "min": 0.9575,
+        "max": 0.9875,
+        "ci_95": 0.0058
       },
       "heading_smoothness": {
-        "mean": 45.239,
-        "std": 40.0408,
-        "median": 32.987,
-        "min": 7.854,
-        "max": 120.166,
-        "ci_95": 20.2634
+        "mean": 24.0332,
+        "std": 16.1579,
+        "median": 15.708,
+        "min": 10.996,
+        "max": 54.192,
+        "ci_95": 8.177
       },
       "action_switch_count": {
-        "mean": 33.8,
-        "std": 27.4049,
-        "median": 26.0,
-        "min": 8.0,
-        "max": 85.0,
-        "ci_95": 13.8688
+        "mean": 21.6,
+        "std": 11.8671,
+        "median": 15.0,
+        "min": 12.0,
+        "max": 43.0,
+        "ci_95": 6.0056
       },
       "oscillation_count": {
-        "mean": 7.6,
-        "std": 6.5661,
-        "median": 6.0,
-        "min": 3.0,
-        "max": 20.0,
-        "ci_95": 3.3229
+        "mean": 4.8,
+        "std": 2.8082,
+        "median": 4.0,
+        "min": 2.0,
+        "max": 8.0,
+        "ci_95": 1.4211
       },
       "mean_decision_time": {
-        "mean": 0.0032,
+        "mean": 0.0025,
         "std": 0.0002,
-        "median": 0.0032,
-        "min": 0.0029,
-        "max": 0.0037,
+        "median": 0.0025,
+        "min": 0.0023,
+        "max": 0.0032,
         "ci_95": 0.0001
       },
       "quantum_circuit_execution_time": {
-        "mean": 0.2316,
-        "std": 0.1,
-        "median": 0.1876,
-        "min": 0.1202,
-        "max": 0.4172,
-        "ci_95": 0.0506
+        "mean": 0.1347,
+        "std": 0.0489,
+        "median": 0.1183,
+        "min": 0.0948,
+        "max": 0.2266,
+        "ci_95": 0.0247
       },
       "total_episode_time": {
-        "mean": 0.5148,
-        "std": 0.2495,
-        "median": 0.448,
-        "min": 0.2369,
-        "max": 0.9802,
-        "ci_95": 0.1263
+        "mean": 0.4075,
+        "std": 0.184,
+        "median": 0.2918,
+        "min": 0.2421,
+        "max": 0.746,
+        "ci_95": 0.0931
       },
       "total_reward": {
-        "mean": 153.056,
-        "std": 73.8653,
-        "median": 172.41,
-        "min": 13.49,
-        "max": 206.17,
-        "ci_95": 37.381
+        "mean": 190.126,
+        "std": 15.7266,
+        "median": 194.35,
+        "min": 172.26,
+        "max": 207.32,
+        "ci_95": 7.9587
       },
       "energy_proxy": {
-        "mean": 130.5716,
-        "std": 63.1014,
-        "median": 105.896,
-        "min": 68.356,
-        "max": 246.05,
-        "ci_95": 31.9337
+        "mean": 94.21,
+        "std": 37.3358,
+        "median": 72.212,
+        "min": 69.212,
+        "max": 163.258,
+        "ci_95": 18.8945
+      },
+      "mean_masked_action_count": {
+        "mean": 1.794,
+        "std": 0.4911,
+        "median": 1.85,
+        "min": 1.0,
+        "max": 2.36,
+        "ci_95": 0.2485
+      },
+      "mean_probability_mass_removed": {
+        "mean": 0.2617,
+        "std": 0.1319,
+        "median": 0.2752,
+        "min": 0.071,
+        "max": 0.4618,
+        "ci_95": 0.0667
+      },
+      "emergency_fallback_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "emergency_fallback_frequency": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "masking_changed_action_count": {
+        "mean": 15.4,
+        "std": 9.2257,
+        "median": 13.0,
+        "min": 3.0,
+        "max": 30.0,
+        "ci_95": 4.6689
+      },
+      "masking_changed_action_rate": {
+        "mean": 0.2585,
+        "std": 0.1202,
+        "median": 0.2791,
+        "min": 0.0682,
+        "max": 0.4222,
+        "ci_95": 0.0608
+      },
+      "timeout_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
       }
     }
+  },
+  "action_divergence_analysis": {
+    "total_decision_steps": 1740,
+    "divergent_steps": 252,
+    "divergence_rate": 0.1448,
+    "quantum_matches_classical": 714,
+    "quantum_classical_match_rate": 0.4103,
+    "hybrid_matches_classical": 966,
+    "hybrid_classical_match_rate": 0.5552,
+    "pure_quantum_safety_overrides": 0,
+    "hybrid_safety_overrides": 0,
+    "mean_trajectory_step_difference": 0.0,
+    "mean_path_length_difference": 0.0,
+    "hybrid_weight": 0.7
   },
   "metadata": {
     "seeds": [
@@ -469,67 +607,73 @@
   },
   "hybrid": {
     "total_episodes": 15,
-    "success_count": 12,
-    "success_rate": 0.8,
-    "mean_path_length": 117.0,
-    "mean_steps": 78.0,
+    "success_count": 15,
+    "success_rate": 1.0,
+    "mean_path_length": 87.0,
+    "mean_steps": 58.0,
     "mean_collisions": 0.0,
     "mean_collision_count": 0.0,
     "mean_collision_rate": 0.0,
-    "mean_navigation_efficiency": 0.4675,
-    "mean_efficiency": 0.4675,
-    "mean_final_distance": 8.948,
+    "mean_navigation_efficiency": 0.6128,
+    "mean_efficiency": 0.6128,
+    "mean_final_distance": 1.412,
     "mean_safety_violations": 0.0,
     "mean_safety_interventions": 0.0,
     "mean_unsafe_action_attempts": 0.0,
     "mean_boundary_violations": 0.0,
-    "mean_min_obstacle_clearance": 1.3204,
-    "mean_min_boundary_clearance": 2.7474,
+    "mean_min_obstacle_clearance": 1.2894,
+    "mean_min_boundary_clearance": 2.541,
     "mean_predicted_collision_count": 0.0,
     "mean_min_moving_obstacle_clearance": 50.0,
     "mean_moving_obstacle_clearance": 50.0,
-    "mean_progress_ratio": 0.8321,
-    "mean_heading_smoothness": 45.239,
-    "mean_action_switch_count": 33.8,
-    "mean_oscillation_count": 7.6,
-    "mean_decision_time": 0.0032,
-    "mean_quantum_circuit_execution_time": 0.2314,
-    "mean_reward": 153.06,
-    "mean_duration_seconds": 0.5148,
-    "mean_episode_time": 0.5148,
-    "mean_energy_proxy": 130.5716,
+    "mean_progress_ratio": 0.9699,
+    "mean_heading_smoothness": 24.0332,
+    "mean_action_switch_count": 21.6,
+    "mean_oscillation_count": 4.8,
+    "mean_decision_time": 0.0025,
+    "mean_quantum_circuit_execution_time": 0.1323,
+    "mean_reward": 190.13,
+    "mean_duration_seconds": 0.402,
+    "mean_episode_time": 0.402,
+    "mean_energy_proxy": 94.21,
+    "mean_masked_action_count": 1.794,
+    "mean_probability_mass_removed": 0.2617,
+    "mean_emergency_fallback_frequency": 0.0,
+    "total_emergency_fallbacks": 0,
+    "total_timeouts": 0,
+    "timeout_count": 0,
     "distributions": {
       "success_rate": {
-        "mean": 0.8,
-        "std": 0.414,
+        "mean": 1.0,
+        "std": 0.0,
         "median": 1.0,
-        "min": 0.0,
+        "min": 1.0,
         "max": 1.0,
-        "ci_95": 0.2095
+        "ci_95": 0.0
       },
       "path_length": {
-        "mean": 117.0,
-        "std": 51.2891,
-        "median": 96.0,
-        "min": 66.0,
-        "max": 210.0,
-        "ci_95": 25.9559
+        "mean": 87.0,
+        "std": 32.5242,
+        "median": 67.5,
+        "min": 64.5,
+        "max": 147.0,
+        "ci_95": 16.4595
       },
       "steps": {
-        "mean": 78.0,
-        "std": 34.1927,
-        "median": 64.0,
-        "min": 44.0,
-        "max": 140.0,
-        "ci_95": 17.3039
+        "mean": 58.0,
+        "std": 21.6828,
+        "median": 45.0,
+        "min": 43.0,
+        "max": 98.0,
+        "ci_95": 10.973
       },
       "final_distance": {
-        "mean": 8.9478,
-        "std": 16.075,
-        "median": 1.282,
-        "min": 0.697,
-        "max": 39.997,
-        "ci_95": 8.1351
+        "mean": 1.412,
+        "std": 0.3834,
+        "median": 1.618,
+        "min": 0.709,
+        "max": 1.7,
+        "ci_95": 0.194
       },
       "collision_count": {
         "mean": 0.0,
@@ -572,20 +716,20 @@
         "ci_95": 0.0
       },
       "min_obstacle_clearance": {
-        "mean": 1.3204,
-        "std": 0.0613,
-        "median": 1.341,
-        "min": 1.208,
-        "max": 1.38,
-        "ci_95": 0.031
+        "mean": 1.2894,
+        "std": 0.0631,
+        "median": 1.322,
+        "min": 1.202,
+        "max": 1.351,
+        "ci_95": 0.0319
       },
       "min_boundary_clearance": {
-        "mean": 2.7474,
-        "std": 1.5207,
+        "mean": 2.541,
+        "std": 1.0754,
         "median": 2.941,
-        "min": 1.108,
-        "max": 5.2,
-        "ci_95": 0.7696
+        "min": 1.183,
+        "max": 3.593,
+        "ci_95": 0.5442
       },
       "predicted_collision_count": {
         "mean": 0.0,
@@ -612,84 +756,140 @@
         "ci_95": 0.0
       },
       "navigation_efficiency": {
-        "mean": 0.4675,
-        "std": 0.2541,
-        "median": 0.4301,
-        "min": 0.1279,
+        "mean": 0.6128,
+        "std": 0.1614,
+        "median": 0.6202,
+        "min": 0.3656,
         "max": 0.8571,
-        "ci_95": 0.1286
+        "ci_95": 0.0817
       },
       "progress_ratio": {
-        "mean": 0.8321,
-        "std": 0.2983,
-        "median": 0.9773,
-        "min": 0.2557,
-        "max": 0.9826,
-        "ci_95": 0.151
+        "mean": 0.9699,
+        "std": 0.0114,
+        "median": 0.969,
+        "min": 0.9575,
+        "max": 0.9875,
+        "ci_95": 0.0058
       },
       "heading_smoothness": {
-        "mean": 45.239,
-        "std": 40.0408,
-        "median": 32.987,
-        "min": 7.854,
-        "max": 120.166,
-        "ci_95": 20.2634
+        "mean": 24.0332,
+        "std": 16.1579,
+        "median": 15.708,
+        "min": 10.996,
+        "max": 54.192,
+        "ci_95": 8.177
       },
       "action_switch_count": {
-        "mean": 33.8,
-        "std": 27.4049,
-        "median": 26.0,
-        "min": 8.0,
-        "max": 85.0,
-        "ci_95": 13.8688
+        "mean": 21.6,
+        "std": 11.8671,
+        "median": 15.0,
+        "min": 12.0,
+        "max": 43.0,
+        "ci_95": 6.0056
       },
       "oscillation_count": {
-        "mean": 7.6,
-        "std": 6.5661,
-        "median": 6.0,
-        "min": 3.0,
-        "max": 20.0,
-        "ci_95": 3.3229
+        "mean": 4.8,
+        "std": 2.8082,
+        "median": 4.0,
+        "min": 2.0,
+        "max": 8.0,
+        "ci_95": 1.4211
       },
       "mean_decision_time": {
-        "mean": 0.0032,
-        "std": 0.0001,
-        "median": 0.0032,
-        "min": 0.003,
-        "max": 0.0035,
+        "mean": 0.0025,
+        "std": 0.0002,
+        "median": 0.0024,
+        "min": 0.0023,
+        "max": 0.003,
         "ci_95": 0.0001
       },
       "quantum_circuit_execution_time": {
-        "mean": 0.2314,
-        "std": 0.1012,
-        "median": 0.1882,
-        "min": 0.1332,
-        "max": 0.4261,
-        "ci_95": 0.0512
+        "mean": 0.1323,
+        "std": 0.0478,
+        "median": 0.111,
+        "min": 0.0929,
+        "max": 0.223,
+        "ci_95": 0.0242
       },
       "total_episode_time": {
-        "mean": 0.5148,
-        "std": 0.2519,
-        "median": 0.454,
-        "min": 0.2551,
-        "max": 0.9968,
-        "ci_95": 0.1275
+        "mean": 0.402,
+        "std": 0.179,
+        "median": 0.307,
+        "min": 0.2461,
+        "max": 0.7327,
+        "ci_95": 0.0906
       },
       "total_reward": {
-        "mean": 153.056,
-        "std": 73.8653,
-        "median": 172.41,
-        "min": 13.49,
-        "max": 206.17,
-        "ci_95": 37.381
+        "mean": 190.126,
+        "std": 15.7266,
+        "median": 194.35,
+        "min": 172.26,
+        "max": 207.32,
+        "ci_95": 7.9587
       },
       "energy_proxy": {
-        "mean": 130.5716,
-        "std": 63.1014,
-        "median": 105.896,
-        "min": 68.356,
-        "max": 246.05,
-        "ci_95": 31.9337
+        "mean": 94.21,
+        "std": 37.3358,
+        "median": 72.212,
+        "min": 69.212,
+        "max": 163.258,
+        "ci_95": 18.8945
+      },
+      "mean_masked_action_count": {
+        "mean": 1.794,
+        "std": 0.4911,
+        "median": 1.85,
+        "min": 1.0,
+        "max": 2.36,
+        "ci_95": 0.2485
+      },
+      "mean_probability_mass_removed": {
+        "mean": 0.2617,
+        "std": 0.1319,
+        "median": 0.2752,
+        "min": 0.071,
+        "max": 0.4618,
+        "ci_95": 0.0667
+      },
+      "emergency_fallback_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "emergency_fallback_frequency": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
+      },
+      "masking_changed_action_count": {
+        "mean": 15.4,
+        "std": 9.2257,
+        "median": 13.0,
+        "min": 3.0,
+        "max": 30.0,
+        "ci_95": 4.6689
+      },
+      "masking_changed_action_rate": {
+        "mean": 0.2585,
+        "std": 0.1202,
+        "median": 0.2791,
+        "min": 0.0682,
+        "max": 0.4222,
+        "ci_95": 0.0608
+      },
+      "timeout_count": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "ci_95": 0.0
       }
     }
   }

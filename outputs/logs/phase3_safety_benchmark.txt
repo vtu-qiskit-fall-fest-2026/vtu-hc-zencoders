@@ -1,0 +1,263 @@
+[2026-10-29 13:59:39] [INFO] [qnav]: Initializing Q-Nav Platform...
+[2026-10-29 13:59:39] [INFO] [qnav]: Loaded 5 scenarios and 3 obstacle maps.
+[2026-10-29 13:59:39] [INFO] [qnav]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:39] [INFO] [qnav]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:39] [INFO] [qnav]: Checkpoint loaded: True
+[2026-10-29 13:59:39] [INFO] [qnav]: Executing benchmark: 5 scenario(s) x 3 seed(s) x models (Dynamic: False).
+[2026-10-29 13:59:39] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_01 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:39] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_01 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:39] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:39] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:39] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:39] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:39] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:39] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_02 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_02 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:40] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_03 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_03 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:41] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_04 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_04 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:42] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_05 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_05 [Seed: 42] (Dynamic: False)
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:43] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:44] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:44] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:44] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:44] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:44] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:44] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_01 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_01 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_02 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:45] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_02 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_03 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:46] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_03 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:47] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_04 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_04 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_05 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:48] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_05 [Seed: 143] (Dynamic: False)
+[2026-10-29 13:59:49] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:49] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:49] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:49] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:49] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:49] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_01 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_01 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:50] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_02 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_02 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:51] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_03 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_03 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:52] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_04 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_04 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:53] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_05 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Running scenario comparison for: scenario_05 [Seed: 244] (Dynamic: False)
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:54] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:55] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:55] [INFO] [qnav.evaluation]: Checkpoint architecture: 6Q3L
+[2026-10-29 13:59:55] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:55] [INFO] [qnav.evaluation]: Benchmark architecture: 6Q3L
+[2026-10-29 13:59:55] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:55] [INFO] [qnav.evaluation]: Checkpoint loaded: True
+[2026-10-29 13:59:58] [INFO] [qnav.evaluation]: Saved static benchmark metrics to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\metrics
+[2026-10-29 13:59:58] [INFO] [qnav.evaluation]: Saved static benchmark metrics to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\metrics
+[2026-10-29 13:59:59] [INFO] [qnav]: Saved trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\scenario_01_trajectory.png
+[2026-10-29 14:00:00] [INFO] [qnav]: Saved safety masking trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\safety_masking_scenario_01_trajectory.png
+[2026-10-29 14:00:00] [INFO] [qnav]: Saved trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\scenario_02_trajectory.png
+[2026-10-29 14:00:00] [INFO] [qnav]: Saved safety masking trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\safety_masking_scenario_02_trajectory.png
+[2026-10-29 14:00:00] [INFO] [qnav]: Saved trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\scenario_03_trajectory.png
+[2026-10-29 14:00:01] [INFO] [qnav]: Saved safety masking trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\safety_masking_scenario_03_trajectory.png
+[2026-10-29 14:00:01] [INFO] [qnav]: Saved trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\scenario_04_trajectory.png
+[2026-10-29 14:00:01] [INFO] [qnav]: Saved safety masking trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\safety_masking_scenario_04_trajectory.png
+[2026-10-29 14:00:01] [INFO] [qnav]: Saved trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\scenario_05_trajectory.png
+[2026-10-29 14:00:02] [INFO] [qnav]: Saved safety masking trajectory plot to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures\safety_masking_scenario_05_trajectory.png
+[2026-10-29 14:00:03] [INFO] [qnav]: Saved all benchmark comparison figures and safety_masking_*.png to D:\Q-Nav — Quantum-Assisted UAV Navigation\outputs\figures
+
+==============================================================================================
+                 Q-NAV DYNAMIC BENCHMARK: 3-MODEL PERFORMANCE SUMMARY
+==============================================================================================
+Metric                       | Classical APF      | Pure Quantum       | Hybrid Quantum    
+----------------------------------------------------------------------------------------------
+Success Rate                 | 40.0%             | 100.0%            | 100.0%           
+Mean Path Length (units)     | 144.30             | 87.00              | 87.00             
+Mean Steps Taken             | 96.2               | 58.0               | 58.0              
+Mean Collisions Count        | 0.00               | 0.00               | 0.00              
+Mean Collision Rate          | 0.000              | 0.000              | 0.000             
+Min Moving Clearance         | 50.00              | 50.00              | 50.00             
+Predicted Collisions         | 0.0                | 0.0                | 0.0               
+Safety Interventions         | 46.2               | 0.0                | 0.0               
+Navigation Efficiency        | 47.79%            | 61.28%            | 61.28%           
+Mean Decision Time (s)       | 0.000300           | 0.002500           | 0.002500          
+Mean Episode Time (s)        | 0.2700             | 0.4075             | 0.4020            
+==============================================================================================
+
+==============================================================================================
+                 ACTION DIVERGENCE & TELEMETRY BREAKDOWN: QUANTUM vs HYBRID
+==============================================================================================
+Total Evaluated Decision Steps         | 1740
+Divergent Actions (Quantum != Hybrid)  | 252 (14.5%)
+Quantum Matches Classical APF          | 714 (41.0%)
+Hybrid Matches Classical APF           | 966 (55.5%)
+Pure Quantum Safety Overrides          | 0
+Hybrid Safety Overrides                | 0
+Mean Trajectory Step Difference        | 0.0 steps
+Mean Path Length Difference            | 0.00 units
+Configured Hybrid Weight (Quantum)     | 0.70
+==============================================================================================
+
+[2026-10-29 14:00:03] [INFO] [qnav]: Q-Nav execution completed successfully.
