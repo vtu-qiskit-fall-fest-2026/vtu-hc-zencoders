@@ -98,6 +98,8 @@ class NavigationController:
         self.recovery_steps_left = 0
         self.recovery_vector: Optional[np.ndarray] = None
         self.recovery_tangent_sign = 1.0
+        self.recovery_side: Optional[str] = None
+        self.recovery_start_dist: Optional[float] = None
         self.last_recovery_step = -100
 
     def reset(
@@ -120,6 +122,8 @@ class NavigationController:
         self.recovery_steps_left = 0
         self.recovery_vector = None
         self.recovery_tangent_sign = 1.0
+        self.recovery_side = None
+        self.recovery_start_dist = None
         self.last_recovery_step = -100
         self.safety_layer.reset()
         self.safety_layer.obstacles = self.env.obstacles
@@ -187,7 +191,7 @@ class NavigationController:
         return False, "none"
 
     def compute_tangential_escape(self, state: Dict[str, Any]) -> np.ndarray:
-        """Compute safe orthogonal tangential bypass around nearest obstacle."""
+        """Compute safe persistent orthogonal tangential bypass around nearest obstacle."""
         drone_pos = np.asarray(state["drone_position"], dtype=float)
         target_pos = np.asarray(state["target_position"], dtype=float)
         t_vec = target_pos - drone_pos
@@ -206,17 +210,23 @@ class NavigationController:
         t_left = np.array([-u_away[1], u_away[0]], dtype=float)
         t_right = np.array([u_away[1], -u_away[0]], dtype=float)
 
-        align_l = float(np.dot(t_left, u_target))
-        align_r = float(np.dot(t_right, u_target))
+        # Commit to a persistent recovery direction (left or right) for the duration of the episode
+        if self.recovery_side is None:
+            align_l = float(np.dot(t_left, u_target))
+            align_r = float(np.dot(t_right, u_target))
+            self.recovery_side = "left" if align_l >= align_r else "right"
 
-        if align_l >= align_r:
-            preferred_tan = t_left if self.recovery_tangent_sign > 0 else t_right
+        chosen_tan = t_left if self.recovery_side == "left" else t_right
+
+        # When very close to obstacle (min_dist < 1.5), follow pure tangent to avoid pushing into obstacle.
+        # When clear of tight bounds (min_dist >= 1.5), blend tangent with goal direction.
+        if min_dist < 1.5:
+            rec_dir = chosen_tan
         else:
-            preferred_tan = t_right if self.recovery_tangent_sign > 0 else t_left
+            rec_dir = 0.75 * chosen_tan + 0.25 * u_target
 
-        rec_dir = 0.70 * preferred_tan + 0.30 * u_target
         r_norm = np.linalg.norm(rec_dir)
-        return rec_dir / r_norm if r_norm > 1e-6 else preferred_tan
+        return rec_dir / r_norm if r_norm > 1e-6 else chosen_tan
 
     def _compute_pure_quantum_action(
         self,
@@ -411,16 +421,34 @@ class NavigationController:
         # Check oscillation / stagnation once per simulation step
         triggered, reason = self.detect_oscillation_and_stagnation(state)
         step_num = self.env.current_step
+        drone_pos = np.asarray(state["drone_position"], dtype=float)
+        target_pos = np.asarray(state["target_position"], dtype=float)
+        curr_dist = float(np.linalg.norm(target_pos - drone_pos))
+        obs, min_dist, _ = self.env.obstacles.get_nearest_obstacle(drone_pos, self.env.drone.radius)
+
         if triggered and not self.recovery_mode and (step_num - self.last_recovery_step > 4):
             self.recovery_mode = True
-            self.recovery_steps_left = 8
+            self.recovery_steps_left = 15
             self.last_recovery_step = step_num
+            self.recovery_start_dist = curr_dist
             self.recovery_vector = self.compute_tangential_escape(state)
-            self.recovery_tangent_sign *= -1.0
+
         if self.recovery_mode:
-            self.recovery_steps_left -= 1
-            if self.recovery_steps_left <= 0:
+            # Dynamically follow obstacle contour with committed recovery side
+            self.recovery_vector = self.compute_tangential_escape(state)
+
+            # Exit condition 1: Made meaningful progress towards target and safely clear of obstacle
+            goal_progress = (self.recovery_start_dist - curr_dist) if self.recovery_start_dist is not None else 0.0
+            if goal_progress > 2.0 and min_dist > 2.2:
                 self.recovery_mode = False
+                self.recovery_side = None
+                self.recovery_steps_left = 0
+            else:
+                self.recovery_steps_left -= 1
+                if self.recovery_steps_left <= 0:
+                    self.recovery_mode = False
+                    if min_dist > 3.0:
+                        self.recovery_side = None
 
         safe_actions = self.safety_layer.get_safe_actions(state)
 

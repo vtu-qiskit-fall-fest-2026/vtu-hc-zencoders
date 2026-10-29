@@ -1,0 +1,4 @@
+model_type,success_rate,collision_rate,mean_path_length,mean_steps,safety_interventions,navigation_efficiency,mean_decision_time,mean_episode_time
+Classical APF,0.400,0.000,144.30,96.2,46.2,0.4779,0.000500,0.5198
+Pure Quantum,0.800,0.000,99.60,66.4,0.0,0.5712,0.005000,0.9331
+Hybrid Quantum-Classical,0.800,0.000,99.60,66.4,0.0,0.5712,0.004600,0.8054
