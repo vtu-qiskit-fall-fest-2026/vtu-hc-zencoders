@@ -16,6 +16,149 @@ from simulation.collision import (
 )
 
 
+def compute_safe_action_probabilities(
+    quantum_probs: Any,
+    safe_actions: List[int],
+    num_actions: int = 9,
+    action_names: Optional[List[str]] = None,
+) -> Dict[str, Any]:
+    """Apply pre-selection safety masking and renormalization to quantum action probabilities.
+
+    Enforces:
+    P_safe(a) = P_quantum(a) / sum(P_quantum(s) for safe actions s) if a in safe_actions else 0.0
+
+    Numerical handling:
+    - Validates input shape: 1D array/list of length num_actions (or dict with action names).
+    - Sanitizes NaNs, +inf, -inf, and negative values to 0.0.
+    - If safe_actions is nonempty but sum of safe probabilities <= 1e-12, uses deterministic uniform distribution
+      over safe actions (1.0 / len(safe_actions)).
+    - If safe_actions is empty (no safe ordinary action), sets emergency_fallback=True and returns zeros.
+    - Calculates exact probability mass removed: max(0.0, 1.0 - sum(safe_probabilities)).
+    - Guarantees safe action probabilities sum to 1.0 within 1e-9 whenever safe actions exist.
+    - Never allows an unsafe action to receive positive probability.
+
+    Args:
+        quantum_probs: Raw quantum model probability distribution (array, list, or dict).
+        safe_actions: List of discrete integer action indices validated by SafetyLayer.
+        num_actions: Total discrete action space size (default: 9).
+        action_names: Optional list of action names for mapping dicts or finding STAY.
+
+    Returns:
+        Dictionary containing:
+            "original_probabilities": np.ndarray (shape (num_actions,)),
+            "safe_action_mask": List[int] (binary 0/1 mask of length num_actions),
+            "safe_action_indices": List[int],
+            "masked_actions_count": int,
+            "probability_mass_removed": float,
+            "normalized_probabilities": np.ndarray (shape (num_actions,)),
+            "unmasked_action": int,
+            "masked_action": int,
+            "masking_changed_action": bool,
+            "emergency_fallback": bool,
+            "is_safe": bool,
+    """
+    if action_names is None:
+        action_names = [
+            "FORWARD", "FORWARD_RIGHT", "RIGHT", "BACKWARD_RIGHT",
+            "BACKWARD", "BACKWARD_LEFT", "LEFT", "FORWARD_LEFT", "STAY"
+        ]
+
+    # 1. Parse and validate input shape
+    if isinstance(quantum_probs, dict):
+        raw_vals = [float(quantum_probs.get(k, 0.0)) for k in action_names]
+        raw_arr = np.array(raw_vals, dtype=float)
+    else:
+        raw_arr = np.asarray(quantum_probs, dtype=float)
+
+    if raw_arr.ndim != 1 or raw_arr.shape[0] != num_actions:
+        raise ValueError(
+            f"Invalid probability vector shape: {raw_arr.shape}, expected ({num_actions},) 1D array of length {num_actions}"
+        )
+
+    orig_arr = raw_arr.copy()
+
+    # 2. Numerical sanitization (NaNs, infinities, negatives)
+    sanitized = np.where(np.isfinite(raw_arr), raw_arr, 0.0)
+    sanitized = np.maximum(0.0, sanitized)
+
+    # Unmasked argmax action
+    if np.sum(sanitized) > 0:
+        unmasked_action = int(np.argmax(sanitized))
+    else:
+        unmasked_action = 0
+
+    # 3. Construct binary safe-action mask
+    valid_safe = sorted(list(set(int(a) for a in safe_actions if 0 <= int(a) < num_actions)))
+    mask = np.zeros(num_actions, dtype=int)
+    mask[valid_safe] = 1
+    masked_count = num_actions - len(valid_safe)
+
+    stay_idx = (
+        action_names.index("STAY")
+        if "STAY" in action_names
+        else (num_actions - 1)
+    )
+
+    # 4. Handle no-safe-action case (emergency fallback)
+    if len(valid_safe) == 0:
+        total_mass = float(np.sum(sanitized))
+        return {
+            "original_probabilities": orig_arr,
+            "safe_action_mask": mask.tolist(),
+            "safe_action_indices": [],
+            "masked_actions_count": int(num_actions),
+            "probability_mass_removed": float(min(1.0, max(0.0, total_mass))) if total_mass > 0 else 1.0,
+            "normalized_probabilities": np.zeros(num_actions, dtype=float),
+            "unmasked_action": int(unmasked_action),
+            "masked_action": int(stay_idx),
+            "masking_changed_action": True,
+            "emergency_fallback": True,
+            "is_safe": False,
+        }
+
+    # 5. Nonempty safe actions: compute safe sum and probability mass removed
+    safe_sum = float(np.sum(sanitized[valid_safe]))
+    total_sum = float(np.sum(sanitized))
+
+    if total_sum > 0:
+        prob_mass_removed = float(np.clip(1.0 - (safe_sum / total_sum), 0.0, 1.0))
+    else:
+        prob_mass_removed = 1.0
+
+    # 6. Renormalize safe probabilities
+    norm_probs = np.zeros(num_actions, dtype=float)
+    if safe_sum > 1e-12:
+        norm_probs[valid_safe] = sanitized[valid_safe] / safe_sum
+    else:
+        # All safe probabilities are zero or invalid -> uniform over safe actions
+        norm_probs[valid_safe] = 1.0 / len(valid_safe)
+
+    # Ensure numerical precision constraint
+    norm_probs = np.maximum(0.0, norm_probs)
+    norm_sum = float(np.sum(norm_probs))
+    if norm_sum > 0:
+        norm_probs = norm_probs / norm_sum
+
+    # 7. Select highest probability safe action
+    best_safe_subidx = int(np.argmax(norm_probs[valid_safe]))
+    masked_action = int(valid_safe[best_safe_subidx])
+    masking_changed = bool(masked_action != unmasked_action)
+
+    return {
+        "original_probabilities": orig_arr,
+        "safe_action_mask": mask.tolist(),
+        "safe_action_indices": valid_safe,
+        "masked_actions_count": int(masked_count),
+        "probability_mass_removed": float(prob_mass_removed),
+        "normalized_probabilities": norm_probs,
+        "unmasked_action": int(unmasked_action),
+        "masked_action": int(masked_action),
+        "masking_changed_action": masking_changed,
+        "emergency_fallback": False,
+        "is_safe": True,
+    }
+
+
 class SafetyLayer:
     """Monitors and enforces spatial safety boundaries, static clearance, and dynamic obstacle avoidance."""
 
@@ -121,6 +264,20 @@ class SafetyLayer:
                 safe_actions.append(idx)
 
         return safe_actions
+
+    def compute_safe_action_probabilities(
+        self,
+        quantum_probs: Any,
+        safe_actions: List[int],
+        num_actions: int = 9,
+    ) -> Dict[str, Any]:
+        """Apply pre-selection safety masking and renormalization via module function."""
+        return compute_safe_action_probabilities(
+            quantum_probs=quantum_probs,
+            safe_actions=safe_actions,
+            num_actions=num_actions,
+            action_names=getattr(self.nav_config, "action_names", None),
+        )
 
     def evaluate_action_safety(
         self,

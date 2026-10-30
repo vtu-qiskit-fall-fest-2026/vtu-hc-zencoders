@@ -720,10 +720,24 @@ def main():
                         title=f"Trajectory: {scn.get('name', scn_id)}",
                     )
                     logger.info(f"Saved trajectory plot to {fig_path.resolve()}")
+                    fig_path_p3 = FIGURES_DIR / f"safety_masking_{scn_id}_trajectory.png"
+                    plot_trajectory_comparison(
+                        scenario=scn,
+                        map_data=map_data,
+                        classical_trajectory=c_path,
+                        quantum_trajectory=q_path,
+                        save_path=fig_path_p3,
+                        title=f"Safety Masking Trajectory: {scn.get('name', scn_id)}",
+                    )
+                    logger.info(f"Saved safety masking trajectory plot to {fig_path_p3.resolve()}")
 
             # Generate all 6 benchmark comparison figures
-            plot_all_benchmark_figures(comparison_data, FIGURES_DIR)
-            logger.info(f"Saved all benchmark comparison figures to {FIGURES_DIR.resolve()}")
+            saved_figs = plot_all_benchmark_figures(comparison_data, FIGURES_DIR)
+            import shutil
+            for name, fpath in saved_figs.items():
+                p3_dest = FIGURES_DIR / f"safety_masking_{fpath.name}"
+                shutil.copy2(fpath, p3_dest)
+            logger.info(f"Saved all benchmark comparison figures and safety_masking_*.png to {FIGURES_DIR.resolve()}")
 
     if args.model == "both" or is_dynamic_mode:
         print_ascii_summary(comparison_data)

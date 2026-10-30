@@ -84,6 +84,21 @@ def compute_episode_metrics(
     min_m_clearance = float(episode_result.get("min_moving_obstacle_clearance", 50.0))
     mean_m_clearance = float(episode_result.get("mean_moving_obstacle_clearance", 50.0))
 
+    # Phase 3 safety-aware action masking metrics
+    telem = episode_result.get("telemetry_history", [])
+    masked_counts = [t.get("masked_actions_count") for t in telem if "masked_actions_count" in t]
+    mass_removed = [t.get("probability_mass_removed") for t in telem if "probability_mass_removed" in t]
+    fallbacks = [t.get("emergency_fallback") for t in telem if "emergency_fallback" in t]
+    changes = [t.get("masking_changed_action") for t in telem if "masking_changed_action" in t]
+
+    mean_masked = float(np.mean(masked_counts)) if masked_counts else 0.0
+    mean_mass_rem = float(np.mean(mass_removed)) if mass_removed else 0.0
+    em_count = sum(1 for f in fallbacks if f)
+    em_freq = float(em_count / max(1, steps))
+    masking_changed_count = sum(1 for c in changes if c)
+    masking_change_rate = float(masking_changed_count / max(1, steps))
+    timeout_flag = 1 if (not success and collisions == 0 and steps >= 100) else 0
+
     return {
         "model_type": episode_result.get("model_type", "unknown"),
         "success": success,
@@ -117,6 +132,13 @@ def compute_episode_metrics(
         "reward": round(reward, 2),
         "total_reward": round(reward, 2),
         "energy_proxy": round(energy_proxy, 3),
+        "mean_masked_action_count": round(mean_masked, 2),
+        "mean_probability_mass_removed": round(mean_mass_rem, 4),
+        "emergency_fallback_count": em_count,
+        "emergency_fallback_frequency": round(em_freq, 4),
+        "masking_changed_action_count": masking_changed_count,
+        "masking_changed_action_rate": round(masking_change_rate, 4),
+        "timeout_count": timeout_flag,
     }
 
 
@@ -186,6 +208,13 @@ def aggregate_metrics(metrics_list: List[Dict[str, Any]]) -> Dict[str, Any]:
         "total_episode_time",
         "total_reward",
         "energy_proxy",
+        "mean_masked_action_count",
+        "mean_probability_mass_removed",
+        "emergency_fallback_count",
+        "emergency_fallback_frequency",
+        "masking_changed_action_count",
+        "masking_changed_action_rate",
+        "timeout_count",
     ]
 
     stats: Dict[str, Dict[str, float]] = {}
@@ -234,5 +263,11 @@ def aggregate_metrics(metrics_list: List[Dict[str, Any]]) -> Dict[str, Any]:
         "mean_duration_seconds": round(mean_duration, 4),
         "mean_episode_time": round(mean_duration, 4),
         "mean_energy_proxy": stats["energy_proxy"]["mean"],
+        "mean_masked_action_count": stats["mean_masked_action_count"]["mean"],
+        "mean_probability_mass_removed": stats["mean_probability_mass_removed"]["mean"],
+        "mean_emergency_fallback_frequency": stats["emergency_fallback_frequency"]["mean"],
+        "total_emergency_fallbacks": int(sum(m.get("emergency_fallback_count", 0) for m in metrics_list)),
+        "total_timeouts": int(sum(m.get("timeout_count", 0) for m in metrics_list)),
+        "timeout_count": int(sum(m.get("timeout_count", 0) for m in metrics_list)),
         "distributions": stats,
     }
