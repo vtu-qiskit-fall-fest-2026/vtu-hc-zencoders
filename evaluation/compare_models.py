@@ -351,6 +351,18 @@ class ModelComparator:
                             "done": step_data.get("done", False),
                             "success": step_data.get("success", False),
                             "collided": step_data.get("collided", False),
+                            "original_quantum_probabilities": str(step_data.get("original_quantum_probabilities", {})),
+                            "safe_action_mask": str(step_data.get("safe_action_mask", [])),
+                            "masked_actions_count": int(step_data.get("masked_actions_count", 0)),
+                            "probability_mass_removed": round(float(step_data.get("probability_mass_removed", 0.0)), 4),
+                            "normalized_probabilities": str(step_data.get("normalized_probabilities", {})),
+                            "unmasked_quantum_action": str(step_data.get("unmasked_quantum_action", "N/A")),
+                            "masking_changed_action": bool(step_data.get("masking_changed_action", False)),
+                            "emergency_fallback": bool(step_data.get("emergency_fallback", False)),
+                            "is_safe": bool(step_data.get("is_safe", True)),
+                            "recovery_active": bool(step_data.get("recovery_active", False)),
+                            "recovery_side": str(step_data.get("recovery_side", "none")),
+                            "safety_interventions": int(step_data.get("safety_interventions", 0)),
                         }
                         all_telemetry_rows.append(row)
 
@@ -568,10 +580,38 @@ class ModelComparator:
                 save_json(trajectories_record["quantum"], TRAJECTORIES_DIR / "quantum_trajectories.json")
                 if "hybrid" in trajectories_record:
                     save_json(trajectories_record["hybrid"], TRAJECTORIES_DIR / "hybrid_trajectories.json")
+                save_json(trajectories_record, TRAJECTORIES_DIR / "safety_masking_trajectories.json")
                 logger.info(f"Saved static benchmark metrics to {METRICS_DIR.resolve()}")
+
+            # Save Phase 3 safety_masking_results.csv
+            results_rows = []
+            for m_key, m_name in [
+                ("classical", "Classical APF"),
+                ("quantum", "Pure Quantum"),
+                ("hybrid", "Hybrid Quantum-Classical"),
+            ]:
+                if m_key in summary_bundle:
+                    s = summary_bundle[m_key]
+                    results_rows.append({
+                        "model_type": m_name,
+                        "success_rate": round(float(s.get("success_rate", 0.0)), 4),
+                        "collision_rate": round(float(s.get("mean_collision_rate", 0.0)), 4),
+                        "mean_path_length": round(float(s.get("mean_path_length", 0.0)), 2),
+                        "mean_steps": round(float(s.get("mean_steps", 0.0)), 1),
+                        "safety_interventions": round(float(s.get("mean_safety_interventions", 0.0)), 1),
+                        "navigation_efficiency": round(float(s.get("mean_navigation_efficiency", 0.0)), 4),
+                        "mean_decision_time": round(float(s.get("mean_decision_time", 0.0)), 6),
+                        "mean_episode_time": round(float(s.get("mean_episode_time", 0.0)), 4),
+                        "mean_masked_actions": round(float(s.get("mean_masked_action_count", 0.0)), 2),
+                        "mean_probability_mass_removed": round(float(s.get("mean_probability_mass_removed", 0.0)), 4),
+                        "emergency_fallbacks": int(s.get("total_emergency_fallbacks", 0)),
+                        "timeout_count": int(s.get("total_timeouts", 0)),
+                    })
+            save_csv(results_rows, METRICS_DIR / "safety_masking_results.csv")
 
             if all_telemetry_rows:
                 save_csv(all_telemetry_rows, TRAJECTORIES_DIR / "telemetry.csv")
+                save_csv(all_telemetry_rows, TRAJECTORIES_DIR / "safety_masking_telemetry.csv")
 
             if all_dynamic_telemetry_rows:
                 save_csv(all_dynamic_telemetry_rows, LOGS_DIR / "dynamic_telemetry.csv")
@@ -605,6 +645,10 @@ class ModelComparator:
                 f"| **Min Moving Clearance** | {c_sum.get('mean_min_moving_obstacle_clearance', 0.0):.2f} | {q_sum.get('mean_min_moving_obstacle_clearance', 0.0):.2f} | {h_sum.get('mean_min_moving_obstacle_clearance', 0.0):.2f} |",
                 f"| **Predicted Collisions** | {c_sum.get('mean_predicted_collision_count', 0.0):.1f} | {q_sum.get('mean_predicted_collision_count', 0.0):.1f} | {h_sum.get('mean_predicted_collision_count', 0.0):.1f} |",
                 f"| **Safety Interventions** | {c_sum.get('mean_safety_interventions', 0.0):.1f} | {q_sum.get('mean_safety_interventions', 0.0):.1f} | {h_sum.get('mean_safety_interventions', 0.0):.1f} |",
+                f"| **Mean Masked Actions** | {c_sum.get('mean_masked_action_count', 0.0):.2f} | {q_sum.get('mean_masked_action_count', 0.0):.2f} | {h_sum.get('mean_masked_action_count', 0.0):.2f} |",
+                f"| **Prob Mass Removed** | {c_sum.get('mean_probability_mass_removed', 0.0):.4f} | {q_sum.get('mean_probability_mass_removed', 0.0):.4f} | {h_sum.get('mean_probability_mass_removed', 0.0):.4f} |",
+                f"| **Emergency Fallbacks** | {c_sum.get('total_emergency_fallbacks', 0)} | {q_sum.get('total_emergency_fallbacks', 0)} | {h_sum.get('total_emergency_fallbacks', 0)} |",
+                f"| **Timeout Count** | {c_sum.get('total_timeouts', 0)} | {q_sum.get('total_timeouts', 0)} | {h_sum.get('total_timeouts', 0)} |",
                 f"| **Navigation Efficiency** | {c_sum.get('mean_navigation_efficiency', 0.0):.3f} | {q_sum.get('mean_navigation_efficiency', 0.0):.3f} | {h_sum.get('mean_navigation_efficiency', 0.0):.3f} |",
                 f"| **Mean Decision Time (s)** | {c_sum.get('mean_decision_time', 0.0):.6f} | {q_sum.get('mean_decision_time', 0.0):.6f} | {h_sum.get('mean_decision_time', 0.0):.6f} |",
                 f"| **Mean Episode Time (s)** | {c_sum.get('mean_episode_time', 0.0):.4f} | {q_sum.get('mean_episode_time', 0.0):.4f} | {h_sum.get('mean_episode_time', 0.0):.4f} |",
