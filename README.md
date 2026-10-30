@@ -1,3 +1,27 @@
+# Zencoders
+
+**VTU-QFF-HC-0139** | Tier: **Online**
+
+---
+
+|                  |                                                                                       |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| **Team**         | Zencoders                                                                             |
+| **Team ID**      | VTU-QFF-HC-0139                                                                       |
+| **Tier**         | Online                                                                                |
+| **Repository**   | [vtu-hc-zencoders](https://github.com/vtu-qiskit-fall-fest-2026/vtu-hc-zencoders.git) |
+| **Organisation** | [vtu-qiskit-fall-fest-2026](https://github.com/vtu-qiskit-fall-fest-2026)             |
+| **Event**        | VTU-QFF Hackathon — VTU-Qiskit Fall Fest 2026                                         |
+
+### Team Members
+
+| S. No. | Name            | Role        |
+| ------ | --------------- | ----------- |
+| 1      | Sai Lahari      | Team Lead   |
+| 2      | Shaik Karimulla | Team Member |
+| 3      | Sunku Kamalesh  | Team Member |
+
+
 # Q-Nav — Quantum-Assisted UAV Navigation
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/downloads/)
@@ -24,8 +48,6 @@ Every experiment is executed under strictly identical environmental conditions (
 
 
 
-
----
 
 ## 2. Key Enhancements & Features
 
